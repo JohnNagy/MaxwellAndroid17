@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AttractionsActivity"
+    android:background="@drawable/poster_50_g_blur_540_902">
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tableLayoutMainScreen"
+        android:baselineAligned="false"
+        android:orientation="vertical"
+        android:layout_marginTop="42dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tableRowLayout1"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="Schedule"
+                android:id="@+id/btnSchedule"
+                android:onClick="openPerformersActivity"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp" />
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="Map"
+                android:id="@+id/btnMap"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp" />
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="Performers"
+                android:id="@+id/btnPerformers"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:onClick="openPerformersActivity" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tableRowLayout2"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="Sponsors"
+                android:id="@+id/btnSponsors"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp" />
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="Statistics"
+                android:id="@+id/btnStatistics"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp" />
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="Exhibitors"
+                android:id="@+id/btnExhibitors"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:layout_column="2" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tableRowLayout3"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="Food"
+                android:id="@+id/btnFood"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp" />
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="Vendors"
+                android:id="@+id/btnVendors"
+                android:onClick="openContactActivity"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp" />
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>
