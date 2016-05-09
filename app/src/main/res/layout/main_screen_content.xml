@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainScreenActivity"
+    tools:showIn="@layout/main_screen_app_bar"
+    android:background="@drawable/poster_50_g_blur_540_902">
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tableLayoutMainScreen"
+        android:baselineAligned="false"
+        android:orientation="vertical"
+        android:layout_marginTop="42dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tableRowLayout1"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="Attractions"
+                android:id="@+id/buttonAttractions"
+                android:onClick="openAttractionsActivity"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp" />
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="Bike &amp; Park"
+                android:id="@+id/buttonBikeNPark"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp" />
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="Kid&apos;s Zone"
+                android:id="@+id/buttonKidsZone"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tableRowLayout2"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="Sponsors"
+                android:id="@+id/buttonSponsors"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp" />
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="Directions"
+                android:id="@+id/buttonDirections"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp" />
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="Social Media"
+                android:id="@+id/buttonSocialMedia"
+                android:onClick="openSocialMediaActivity"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tableRowLayout3"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="About Offutt"
+                android:id="@+id/buttonAboutOffutt"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp" />
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="Frequently Asked Questions"
+                android:id="@+id/buttonFAQ"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp" />
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="Contact Info"
+                android:id="@+id/buttonContactInfo"
+                android:onClick="openContactActivity"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp" />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:singleLine="true"
+        android:scrollHorizontally="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:text="@string/Main_Default_Marquee"
+        android:background="@color/colorPrimary"
+        android:id="@+id/marquee"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:onClick="goToWebsite" />
+</RelativeLayout>

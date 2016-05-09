@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Offutt Air Show</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_basic">BasicActivity</string>
+    <string name="Contact_Activity_Label">Contact</string>
+    <string name="Social_Media_Activity_Label">Social Media</string>
+    <string name="Attractions_Activity_Label">Attractions</string>
+    <string name="Main_Default_Marquee">Offutt Air Show 2016. July 30-31. More info at <a href="www.google.com">OffuttAirShow.com</a>. No Coolers, Backpacks, or Pets.</string>
+    <string name="title_activity_performers">PerformersActivity</string>
+    <string name="Performers_Activity_Label">Performers</string>
+
+    <string-array name="performerNames">
+        <item>"USAF Thunderbirds"</item>
+        <item>"VFA-122 Super Hornet DEMO"</item>
+        <item>"Lima Lima Flight Team"</item>
+        <item>"Kent Pietsch Airshows"</item>
+        <item>"P-51 Gunfighter"</item>
+        <item>"SNJ-6 “Texan”"</item>
+        <item>"Rifle Airshows"</item>
+    </string-array>
+
+    <string-array name="performerInfo">
+        <item>"this is the info for 1"</item>
+        <item>"this is the info for 2"</item>
+        <item>"this is the info for 3"</item>
+        <item>"this is the info for 4"</item>
+        <item>"this is the info for 5"</item>
+        <item>"this is the info for 6"</item>
+        <item>"this is the info for 7"</item>
+    </string-array>
+
+</resources>
