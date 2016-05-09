@@ -29,7 +29,7 @@
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Attractions"
+                android:text="@string/Attractions_Activity_Label"
                 android:id="@+id/buttonAttractions"
                 android:onClick="openAttractionsActivity"
                 android:layout_gravity="center_vertical"
@@ -38,7 +38,7 @@
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Bike &amp; Park"
+                android:text="@string/Bike_Park_Activity_Label"
                 android:id="@+id/buttonBikeNPark"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp" />
@@ -46,7 +46,7 @@
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Kid&apos;s Zone"
+                android:text="@string/Kid_Zone_Activity_Label"
                 android:id="@+id/buttonKidsZone"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp" />
@@ -62,7 +62,7 @@
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Sponsors"
+                android:text="@string/Sponsors_Activity_Label"
                 android:id="@+id/buttonSponsors"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp" />
@@ -70,7 +70,7 @@
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Directions"
+                android:text="@string/Directions_Activity_Label"
                 android:id="@+id/buttonDirections"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp" />
@@ -78,7 +78,7 @@
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Social Media"
+                android:text="@string/Social_Media_Activity_Label"
                 android:id="@+id/buttonSocialMedia"
                 android:onClick="openSocialMediaActivity"
                 android:layout_gravity="center_vertical"
@@ -96,7 +96,7 @@
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="About Offutt"
+                android:text="@string/About_Offutt_Activity_Label"
                 android:id="@+id/buttonAboutOffutt"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp" />
@@ -104,15 +104,16 @@
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Frequently Asked Questions"
+                android:text="@string/FAQ_Activity_Label"
                 android:id="@+id/buttonFAQ"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                android:onClick="openFAQActivity" />
 
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Contact Info"
+                android:text="@string/Contact_Activity_Label"
                 android:id="@+id/buttonContactInfo"
                 android:onClick="openContactActivity"
                 android:layout_gravity="center_vertical"

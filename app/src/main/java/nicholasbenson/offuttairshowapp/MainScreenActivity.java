@@ -128,6 +128,10 @@ public class MainScreenActivity extends AppCompatActivity
         startActivity(intent);
     }
 
+    public void openFAQActivity(View view) {
+        Intent intent = new Intent(this, FAQActivity.class);
+        startActivity(intent);
+    }
 
 /*
     public void openFAQActivity(View view) {
