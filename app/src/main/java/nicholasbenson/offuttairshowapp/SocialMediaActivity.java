@@ -36,15 +36,15 @@ public class SocialMediaActivity extends AppCompatActivity{
         Integer btnText = btn.getId();
         switch (btnText)
         {
-            case R.id.btnFacebook: intent.setData(Uri.parse("http://www.facebook.com"));;
+            case R.id.btnFacebook: intent.setData(Uri.parse(getString(R.string.SM_facebook_link)));;
                 break;
-            case R.id.btnFlickr: intent.setData(Uri.parse("http://www.flickr.com"));;
+            case R.id.btnFlickr: intent.setData(Uri.parse(getString(R.string.SM_flickr_link)));;
                 break;
-            case R.id.btnPinterest: intent.setData(Uri.parse("http://www.pinterest.com"));;
+            case R.id.btnPinterest: intent.setData(Uri.parse(getString(R.string.SM_pinterest_link)));;
                 break;
-            case R.id.btnWhatsapp: intent.setData(Uri.parse("http://www.whatsapp.com"));;
+            case R.id.btnWhatsapp: intent.setData(Uri.parse(getString(R.string.SM_whatsapp_link)));;
                 break;
-            case R.id.btnTwitter: intent.setData(Uri.parse("https://www.twitter.com"));
+            case R.id.btnTwitter: intent.setData(Uri.parse(getString(R.string.SM_twitter_link)));
                 break;
         }
         startActivity(intent);

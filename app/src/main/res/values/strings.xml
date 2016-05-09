@@ -18,6 +18,11 @@
     <string name="Sponsors_Activity_Label">Sponsors</string>
     <string name="Directions_Activity_Label">Directions</string>
     <string name="About_Offutt_Activity_Label">About Offutt</string>
+    <string name="SM_facebook_link">http://www.facebook.com</string>
+    <string name="SM_flickr_link">http://www.flickr.com</string>
+    <string name="SM_pinterest_link">http://www.pinterest.com</string>
+    <string name="SM_whatsapp_link">http://www.whatsapp.com</string>
+    <string name="SM_twitter_link">https://www.twitter.com</string>
 
     <string-array name="performerNames">
         <item>"USAF Thunderbirds"</item>
