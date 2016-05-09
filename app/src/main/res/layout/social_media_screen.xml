@@ -13,65 +13,61 @@
     android:background="@drawable/poster_50_g_blur_540_902"
     >
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/tableLayoutMainScreen"
-        android:baselineAligned="false"
-        android:orientation="vertical"
-        >
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="Flickr"
+        android:id="@+id/btnFlickr"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/flickr_icon"
+        android:layout_below="@+id/btnWhatsapp"
+        android:layout_toRightOf="@+id/btnWhatsapp"
+        android:layout_toEndOf="@+id/btnWhatsapp" />
 
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/tableRowLayout1"
-            android:orientation="vertical"
-            android:layout_weight="1">
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="Whatsapp"
+        android:id="@+id/btnWhatsapp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/whatsapp_icon"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="FB"
-                android:id="@+id/buttonAttractions"
-                android:layout_weight="1" />
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="Pin"
+        android:id="@+id/btnPinterest"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/pinterest"
+        android:layout_span="2"
+        android:layout_below="@+id/btnWhatsapp"
+        android:layout_toLeftOf="@+id/btnWhatsapp"
+        android:layout_toStartOf="@+id/btnWhatsapp" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Twitter"
-                android:id="@+id/buttonBikeNPark"
-                android:layout_weight="1" />
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="facebook"
+        android:id="@+id/btnFacebook"
+        android:onClick="openAttractionsActivity"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/facebook_icon"
+        android:layout_above="@+id/btnWhatsapp"
+        android:layout_toLeftOf="@+id/btnWhatsapp"
+        android:layout_toStartOf="@+id/btnWhatsapp" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Pin"
-                android:id="@+id/buttonKidsZone"
-                android:layout_weight="1" />
-        </TableRow>
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="twitter"
+        android:id="@+id/btnTwitter"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/twitter_icon"
+        android:layout_above="@+id/btnWhatsapp"
+        android:layout_toRightOf="@+id/btnWhatsapp"
+        android:layout_toEndOf="@+id/btnWhatsapp" />
 
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/tableRowLayout2"
-            android:orientation="vertical"
-            android:layout_weight="1" >
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="WhatsApp"
-                android:id="@+id/buttonSponsors"
-                android:layout_weight="1" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Flickr"
-                android:id="@+id/buttonDirections"
-                android:layout_weight="1" />
-
-        </TableRow>
-
-    </TableLayout>
 </RelativeLayout>

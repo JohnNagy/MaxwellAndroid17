@@ -1,9 +1,13 @@
 package nicholasbenson.offuttairshowapp;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class SocialMediaActivity extends AppCompatActivity{
 
@@ -23,6 +27,27 @@ public class SocialMediaActivity extends AppCompatActivity{
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void goToWebsite (View view, Button btn) {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+        Integer btnText = btn.getId();
+        switch (btnText)
+        {
+            case R.id.btnFacebook: intent.setData(Uri.parse("http://www.facebook.com"));;
+                break;
+            case R.id.btnFlickr: intent.setData(Uri.parse("http://www.flickr.com"));;
+                break;
+            case R.id.btnPinterest: intent.setData(Uri.parse("http://www.pinterest.com"));;
+                break;
+            case R.id.btnWhatsapp: intent.setData(Uri.parse("http://www.whatsapp.com"));;
+                break;
+            case R.id.btnTwitter: intent.setData(Uri.parse("https://www.twitter.com"));
+                break;
+        }
+        startActivity(intent);
     }
 
 }

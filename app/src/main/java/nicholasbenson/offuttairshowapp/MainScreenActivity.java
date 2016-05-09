@@ -133,6 +133,10 @@ public class MainScreenActivity extends AppCompatActivity
         startActivity(intent);
     }
 
+    public void openAboutOffuttActivity(View view) {
+        Intent intent = new Intent(this, AboutOffuttActivity.class);
+        startActivity(intent);
+    }
 /*
     public void openFAQActivity(View view) {
         Intent intent = new Intent(this, BasicActivity.class);

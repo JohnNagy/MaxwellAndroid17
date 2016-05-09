@@ -99,7 +99,8 @@
                 android:text="@string/About_Offutt_Activity_Label"
                 android:id="@+id/buttonAboutOffutt"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                android:onClick="openAboutOffuttActivity" />
 
             <Button
                 android:layout_width="80dp"
