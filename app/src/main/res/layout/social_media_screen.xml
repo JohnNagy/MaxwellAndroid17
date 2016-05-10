@@ -22,7 +22,8 @@
         android:background="@drawable/flickr_icon"
         android:layout_below="@+id/btnWhatsapp"
         android:layout_toRightOf="@+id/btnWhatsapp"
-        android:layout_toEndOf="@+id/btnWhatsapp" />
+        android:layout_toEndOf="@+id/btnWhatsapp"
+        android:onClick="goToSocialMedia" />
 
     <Button
         android:layout_width="100dp"
@@ -32,7 +33,8 @@
         android:layout_gravity="center_vertical"
         android:background="@drawable/whatsapp_icon"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="goToSocialMedia" />
 
     <Button
         android:layout_width="100dp"
@@ -40,23 +42,25 @@
         android:text="Pin"
         android:id="@+id/btnPinterest"
         android:layout_gravity="center_vertical"
-        android:background="@drawable/pinterest"
+        android:background="@drawable/pinterest_icon"
         android:layout_span="2"
         android:layout_below="@+id/btnWhatsapp"
         android:layout_toLeftOf="@+id/btnWhatsapp"
-        android:layout_toStartOf="@+id/btnWhatsapp" />
+        android:layout_toStartOf="@+id/btnWhatsapp"
+        android:nestedScrollingEnabled="false"
+        android:onClick="goToSocialMedia" />
 
     <Button
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:text="facebook"
         android:id="@+id/btnFacebook"
-        android:onClick="openAttractionsActivity"
         android:layout_gravity="center_vertical"
         android:background="@drawable/facebook_icon"
         android:layout_above="@+id/btnWhatsapp"
         android:layout_toLeftOf="@+id/btnWhatsapp"
-        android:layout_toStartOf="@+id/btnWhatsapp" />
+        android:layout_toStartOf="@+id/btnWhatsapp"
+        android:onClick="goToSocialMedia" />
 
     <Button
         android:layout_width="100dp"
@@ -67,7 +71,8 @@
         android:background="@drawable/twitter_icon"
         android:layout_above="@+id/btnWhatsapp"
         android:layout_toRightOf="@+id/btnWhatsapp"
-        android:layout_toEndOf="@+id/btnWhatsapp" />
+        android:layout_toEndOf="@+id/btnWhatsapp"
+        android:onClick="goToSocialMedia" />
 
 
 </RelativeLayout>
