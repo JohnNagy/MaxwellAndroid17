@@ -16,7 +16,6 @@
     <Button
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:text="Flickr"
         android:id="@+id/btnFlickr"
         android:layout_gravity="center_vertical"
         android:background="@drawable/flickr_icon"
@@ -28,7 +27,6 @@
     <Button
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:text="Whatsapp"
         android:id="@+id/btnWhatsapp"
         android:layout_gravity="center_vertical"
         android:background="@drawable/whatsapp_icon"
@@ -39,21 +37,17 @@
     <Button
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:text="Pin"
         android:id="@+id/btnPinterest"
         android:layout_gravity="center_vertical"
         android:background="@drawable/pinterest_icon"
-        android:layout_span="2"
         android:layout_below="@+id/btnWhatsapp"
         android:layout_toLeftOf="@+id/btnWhatsapp"
         android:layout_toStartOf="@+id/btnWhatsapp"
-        android:nestedScrollingEnabled="false"
         android:onClick="goToSocialMedia" />
 
     <Button
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:text="facebook"
         android:id="@+id/btnFacebook"
         android:layout_gravity="center_vertical"
         android:background="@drawable/facebook_icon"
@@ -65,7 +59,6 @@
     <Button
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:text="twitter"
         android:id="@+id/btnTwitter"
         android:layout_gravity="center_vertical"
         android:background="@drawable/twitter_icon"

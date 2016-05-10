@@ -13,36 +13,19 @@ import android.widget.ImageView;
  */
 public class MapActivity  extends AppCompatActivity{
 
-    private ImageView iv;
-    private ScaleGestureDetector sGD;
-    private Matrix matrix = new Matrix();
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.map_screen);
 
-        iv = (ImageView)findViewById(R.id.ivPinchToZoom);
-        sGD = new ScaleGestureDetector(this, new ScaleListener());
+
+        TouchImageView img = new TouchImageView(this);
+        img.setImageResource(R.drawable.air_show_poster_half_res);
+        img.setMaxZoom(4f);
+        setContentView(img);
     }
 
-    public boolean onTouchEvent(MotionEvent ev)
-    {
-        sGD.onTouchEvent(ev);
-        return true;
-    }
 
-    public class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener
-    {
-        @Override
-        public boolean onScale(ScaleGestureDetector detector) {
-            float scaleFactor = detector.getScaleFactor();
-            scaleFactor = Math.max(0.1f, Math.min(scaleFactor, 5.0f));
 
-            matrix.setScale(scaleFactor, scaleFactor);
-            iv.setImageMatrix(matrix);
-            return true;
-        }
-    }
 }
