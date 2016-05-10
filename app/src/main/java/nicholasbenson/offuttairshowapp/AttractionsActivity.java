@@ -53,4 +53,9 @@ public class AttractionsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void openMapActivity(View view) {
+        Intent intent = new Intent(this, MapActivity.class);
+        startActivity(intent);
+    }
+
 }

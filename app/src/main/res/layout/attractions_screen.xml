@@ -38,7 +38,8 @@
                 android:text="Map"
                 android:id="@+id/btnMap"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                android:onClick="openMapActivity" />
 
             <Button
                 android:layout_width="80dp"

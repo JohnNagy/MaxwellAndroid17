@@ -23,6 +23,7 @@
     <string name="SM_pinterest_link">http://www.pinterest.com</string>
     <string name="SM_whatsapp_link">http://www.whatsapp.com</string>
     <string name="SM_twitter_link">https://www.twitter.com</string>
+    <string name="Map_Activity_Label">Map</string>
 
     <string-array name="performerNames">
         <item>"USAF Thunderbirds"</item>
