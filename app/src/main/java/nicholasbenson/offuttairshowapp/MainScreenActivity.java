@@ -1,6 +1,7 @@
 package nicholasbenson.offuttairshowapp;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -31,6 +32,13 @@ public class MainScreenActivity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });*/
+
+        ScrollTextView scrolltext=(ScrollTextView) findViewById(R.id.marquee);
+        scrolltext.setText(R.string.Main_Default_Marquee);
+        scrolltext.setTextColor(Color.WHITE);
+        scrolltext.startScroll();
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(

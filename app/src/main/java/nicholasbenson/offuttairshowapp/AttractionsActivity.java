@@ -1,6 +1,7 @@
 package nicholasbenson.offuttairshowapp;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
@@ -55,6 +56,14 @@ public class AttractionsActivity extends AppCompatActivity {
 
     public void openMapActivity(View view) {
         Intent intent = new Intent(this, MapActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToWebsite (View view) {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+        intent.setData(Uri.parse("http://www.offuttairshow.com"));
         startActivity(intent);
     }
 

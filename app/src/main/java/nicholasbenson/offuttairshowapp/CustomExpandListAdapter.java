@@ -13,12 +13,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class PerformersActivityCustomAdapter extends BaseExpandableListAdapter
+public class CustomExpandListAdapter extends BaseExpandableListAdapter
 {
     private LayoutInflater inflater;
     private ArrayList<Parent> mParent;
 
-    public PerformersActivityCustomAdapter(Context context, ArrayList<Parent> parent){
+    public CustomExpandListAdapter(Context context, ArrayList<Parent> parent){
         mParent = parent;
         inflater = LayoutInflater.from(context);
     }

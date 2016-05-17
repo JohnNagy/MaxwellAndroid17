@@ -2,7 +2,6 @@ package nicholasbenson.offuttairshowapp;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.app.Activity;
 import android.os.PersistableBundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
@@ -87,7 +86,7 @@ public class PerformersActivity extends AppCompatActivity
         }
 
         //sets the adapter that provides data to the list.
-        mExpandableList.setAdapter(new PerformersActivityCustomAdapter(PerformersActivity.this,arrayParents));
+        mExpandableList.setAdapter(new CustomExpandListAdapter(PerformersActivity.this,arrayParents));
 
     }
 

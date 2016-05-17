@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AttractionsActivity"
-    android:background="@drawable/poster_50_g_blur_540_902">
+    android:background="@drawable/poster_50_g_blur_270x450">
 
     <TableLayout
         android:layout_width="wrap_content"
@@ -26,7 +26,7 @@
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Schedule"
+                android:text="@string/Schedule_Activity_Label"
                 android:id="@+id/btnSchedule"
                 android:onClick="openPerformersActivity"
                 android:layout_gravity="center_vertical"
@@ -35,7 +35,7 @@
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Map"
+                android:text="@string/Map_Activity_Label"
                 android:id="@+id/btnMap"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp"
@@ -44,7 +44,7 @@
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Performers"
+                android:text="@string/Performers_Activity_Label"
                 android:id="@+id/btnPerformers"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp"
@@ -61,7 +61,7 @@
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Sponsors"
+                android:text="@string/Sponsors_Activity_Label"
                 android:id="@+id/btnSponsors"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp" />
@@ -110,4 +110,10 @@
                 android:layout_margin="10dp" />
         </TableRow>
     </TableLayout>
+
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/marquee_layout" />
+
 </RelativeLayout>
