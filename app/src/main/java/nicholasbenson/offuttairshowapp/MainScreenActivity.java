@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
+import android.view.MenuInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -69,17 +70,15 @@ public class MainScreenActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                return true;
+            case R.id.menu_qr_scanner:
+                scanQR();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -132,6 +131,50 @@ public class MainScreenActivity extends AppCompatActivity
         startActivity(intent);
     }
 
+    /**
+     * Opens a supported QR scanning app and handles scanning.
+     * If a supported app is not installed, the user will be redirected to the Play Store.
+     */
+    public void scanQR() {
+        try {
+            Intent intent = new Intent("com.google.zxing.client.android.SCAN");
+            intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
+            startActivityForResult(intent, 0);
+        } catch (Exception e) {
+            Uri marketUri = Uri.parse("market://details?id=com.google.zxing.client.android");
+            Intent marketIntent = new Intent(Intent.ACTION_VIEW,marketUri);
+            startActivity(marketIntent);
+        }
+    }
+
+    /**
+     * Handles QR-scan result and builds an intent.
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 0) {
+            if (resultCode == RESULT_OK) {
+                Uri result = Uri.parse(data.getStringExtra("SCAN_RESULT"));
+                String activity = result.getPathSegments().get(0);
+                String sub_activity = result.getPathSegments().get(1);
+                String item = result.getPathSegments().get(2);
+                if(activity.equals("attractions")){ //TODO Better handling and activity lookup
+                    if(sub_activity.equals("performers")){
+                        Intent intent = new Intent(this, PerformersActivity.class);
+                        intent.putExtra("offuttairshowapp.highlightitem", item);
+                        startActivity(intent);
+                    }
+                }
+            }
+            if(resultCode == RESULT_CANCELED){
+                return;
+            }
+        }
+    }
 
 /*
     public void openFAQActivity(View view) {
