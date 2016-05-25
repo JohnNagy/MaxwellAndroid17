@@ -1,6 +1,7 @@
 package nicholasbenson.offuttairshowapp;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
@@ -36,6 +37,13 @@ public class MainScreenActivity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });*/
+
+        ScrollTextView scrolltext=(ScrollTextView) findViewById(R.id.marquee);
+        scrolltext.setText(R.string.Main_Default_Marquee);
+        scrolltext.setTextColor(Color.WHITE);
+        scrolltext.startScroll();
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -130,6 +138,17 @@ public class MainScreenActivity extends AppCompatActivity
         Intent intent = new Intent(this, AttractionsActivity.class);
         startActivity(intent);
     }
+
+    public void openFAQActivity(View view) {
+        Intent intent = new Intent(this, FAQActivity.class);
+        startActivity(intent);
+    }
+
+    public void openAboutOffuttActivity(View view) {
+        Intent intent = new Intent(this, AboutOffuttActivity.class);
+        startActivity(intent);
+    }
+
 
     /**
      * Opens a supported QR scanning app and handles scanning.

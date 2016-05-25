@@ -10,7 +10,7 @@ public class ContactActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.contact_screen_activity);
+        setContentView(R.layout.contact_screen);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 

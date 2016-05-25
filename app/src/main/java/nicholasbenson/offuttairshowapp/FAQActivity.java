@@ -1,23 +1,16 @@
 package nicholasbenson.offuttairshowapp;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
-/**
- * Created by Nick on 5/1/2016.
- */
-public class AttractionsActivity extends AppCompatActivity {
-
+public class FAQActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.attractions_screen);
+        setContentView(R.layout.faq_screen);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
@@ -46,25 +39,6 @@ public class AttractionsActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-
-    public void openPerformersActivity(View view) {
-        Intent intent = new Intent(this, PerformersActivity.class);
-        startActivity(intent);
-    }
-
-    public void openMapActivity(View view) {
-        Intent intent = new Intent(this, MapActivity.class);
-        startActivity(intent);
-    }
-
-    public void goToWebsite (View view) {
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_VIEW);
-        intent.addCategory(Intent.CATEGORY_BROWSABLE);
-        intent.setData(Uri.parse("http://www.offuttairshow.com"));
-        startActivity(intent);
     }
 
 }

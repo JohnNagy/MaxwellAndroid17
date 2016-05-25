@@ -7,7 +7,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainScreenActivity"
     tools:showIn="@layout/main_screen_app_bar"
-    android:background="@drawable/poster_50_g_blur_540_902">
+    android:background="@drawable/poster_50_g_blur_270x450">
 
     <TableLayout
         android:layout_width="wrap_content"
@@ -20,7 +20,7 @@
         android:layout_centerHorizontal="true">
 
         <TableRow
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tableRowLayout1"
             android:orientation="vertical"
@@ -29,24 +29,25 @@
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Attractions"
                 android:id="@+id/buttonAttractions"
                 android:onClick="openAttractionsActivity"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                android:background="@drawable/image007" />
 
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Bike &amp; Park"
+                android:text="@string/Bike_Park_Activity_Label"
                 android:id="@+id/buttonBikeNPark"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                android:background="@drawable/car" />
 
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Kid&apos;s Zone"
+                android:text="@string/Kid_Zone_Activity_Label"
                 android:id="@+id/buttonKidsZone"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp" />
@@ -62,23 +63,25 @@
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Sponsors"
+                android:text="@string/Sponsors_Activity_Label"
                 android:id="@+id/buttonSponsors"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                android:background="@drawable/sponsors" />
 
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Directions"
+                android:text="@string/Directions_Activity_Label"
                 android:id="@+id/buttonDirections"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                android:background="@drawable/image008" />
 
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Social Media"
+                android:text="@string/Social_Media_Activity_Label"
                 android:id="@+id/buttonSocialMedia"
                 android:onClick="openSocialMediaActivity"
                 android:layout_gravity="center_vertical"
@@ -96,45 +99,38 @@
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="About Offutt"
+                android:text="@string/About_Offutt_Activity_Label"
                 android:id="@+id/buttonAboutOffutt"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                android:onClick="openAboutOffuttActivity" />
 
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Frequently Asked Questions"
+                android:text="@string/FAQ_Activity_Label"
                 android:id="@+id/buttonFAQ"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                android:onClick="openFAQActivity"
+                android:background="@drawable/image005" />
 
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Contact Info"
+                android:text="@string/Contact_Activity_Label"
                 android:id="@+id/buttonContactInfo"
                 android:onClick="openContactActivity"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp" />
         </TableRow>
+
     </TableLayout>
 
-    <TextView
-        android:layout_width="match_parent"
+    <include
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:singleLine="true"
-        android:scrollHorizontally="true"
-        android:ellipsize="marquee"
-        android:marqueeRepeatLimit="marquee_forever"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:text="@string/Main_Default_Marquee"
-        android:background="@color/colorPrimary"
-        android:id="@+id/marquee"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:textColor="@android:color/white"
-        android:onClick="goToWebsite" />
+        layout="@layout/marquee_layout"
+        />
+
 </RelativeLayout>

@@ -8,16 +8,17 @@ import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class PerformersActivityCustomAdapter extends BaseExpandableListAdapter
+public class CustomExpandListAdapter extends BaseExpandableListAdapter
 {
     private LayoutInflater inflater;
     private ArrayList<Parent> mParent;
 
-    public PerformersActivityCustomAdapter(Context context, ArrayList<Parent> parent){
+    public CustomExpandListAdapter(Context context, ArrayList<Parent> parent){
         mParent = parent;
         inflater = LayoutInflater.from(context);
     }
@@ -80,10 +81,14 @@ public class PerformersActivityCustomAdapter extends BaseExpandableListAdapter
         TextView textView = (TextView) view.findViewById(R.id.list_item_text_view);
         textView.setText(getGroup(groupPosition).toString());
 
+        /*LinearLayout ll = (LinearLayout)view.findViewById(R.id.performers_image);
+        ll.setBackgroundResource(PerformersActivity.getContext().getApplicationContext().getResources().getIdentifier("performer_" + groupPosition, "drawable", PerformersActivity.getContext().getApplicationInfo().packageName));*/
+
         ImageView imgView = (ImageView)view.findViewById(R.id.imageView);
         imgView.setImageResource(
                 PerformersActivity.getContext().getApplicationContext().getResources().getIdentifier("performer_" + groupPosition, "drawable", PerformersActivity.getContext().getApplicationInfo().packageName)
         );
+
 
         view.setTag(holder);
 

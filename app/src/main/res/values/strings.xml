@@ -12,6 +12,19 @@
     <string name="Main_Default_Marquee">Offutt Air Show 2016. July 30-31. More info at <a href="www.google.com">OffuttAirShow.com</a>. No Coolers, Backpacks, or Pets.</string>
     <string name="title_activity_performers">PerformersActivity</string>
     <string name="Performers_Activity_Label">Performers</string>
+    <string name="FAQ_Activity_Label">FAQ</string>
+    <string name="Bike_Park_Activity_Label"><![CDATA[Bike & Park]]></string>
+    <string name="Kid_Zone_Activity_Label">Kid\'s Zone</string>
+    <string name="Sponsors_Activity_Label">Sponsors</string>
+    <string name="Directions_Activity_Label">Directions</string>
+    <string name="About_Offutt_Activity_Label">About Offutt</string>
+    <string name="SM_facebook_link">http://www.facebook.com</string>
+    <string name="SM_flickr_link">http://www.flickr.com</string>
+    <string name="SM_pinterest_link">http://www.pinterest.com</string>
+    <string name="SM_whatsapp_link">http://www.whatsapp.com</string>
+    <string name="SM_twitter_link">https://www.twitter.com</string>
+    <string name="Map_Activity_Label">Map</string>
+    <string name="Schedule_Activity_Label">Schedule</string>
 
     <string-array name="performerNames">
         <item>"USAF Thunderbirds"</item>

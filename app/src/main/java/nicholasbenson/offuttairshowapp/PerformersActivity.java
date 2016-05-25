@@ -91,7 +91,7 @@ public class PerformersActivity extends AppCompatActivity
         }
 
         //sets the adapter that provides data to the list.
-        mExpandableList.setAdapter(new PerformersActivityCustomAdapter(PerformersActivity.this, arrayParents));
+        mExpandableList.setAdapter(new PerformersActivityCustomAdapter(PerformersActivity.this,arrayParents));
 
         try {
             handleQRIntent(getIntent());
