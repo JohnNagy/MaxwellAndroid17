@@ -49,7 +49,7 @@ public class CustomExpandListAdapter extends BaseExpandableListAdapter
 
     //gets the name of each item
     public Object getChild(int i, int il) {
-        return mParent.get(i).getChildInfo();
+        return mParent.get(i).getChildBody();
     }
 
     @Override
@@ -108,8 +108,11 @@ public class CustomExpandListAdapter extends BaseExpandableListAdapter
             view = inflater.inflate(R.layout.performer_list_item_child, viewGroup,false);
         }
 
-        TextView textView = (TextView) view.findViewById(R.id.list_item_text_child);
-        textView.setText(mParent.get(groupPosition).getChildInfo());
+        TextView tvBody = (TextView) view.findViewById(R.id.list_item_text_child_body);
+        tvBody.setText(mParent.get(groupPosition).getChildBody());
+
+        TextView tvLink = (TextView) view.findViewById(R.id.list_item_text_child_link);
+        tvLink.setText(mParent.get(groupPosition).getChildLink());
 
         view.setTag(holder);
 

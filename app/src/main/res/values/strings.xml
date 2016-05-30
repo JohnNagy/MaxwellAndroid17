@@ -26,24 +26,28 @@
     <string name="Map_Activity_Label">Map</string>
     <string name="Schedule_Activity_Label">Schedule</string>
 
-    <string-array name="performerNames">
-        <item>"USAF Thunderbirds"</item>
-        <item>"VFA-122 Super Hornet DEMO"</item>
-        <item>"Lima Lima Flight Team"</item>
-        <item>"Kent Pietsch Airshows"</item>
-        <item>"P-51 Gunfighter"</item>
-        <item>"SNJ-6 “Texan”"</item>
-        <item>"Rifle Airshows"</item>
-    </string-array>
-
-    <string-array name="performerInfo">
-        <item>"this is the info for 1"</item>
-        <item>"this is the info for 2"</item>
-        <item>"this is the info for 3"</item>
-        <item>"this is the info for 4"</item>
-        <item>"this is the info for 5"</item>
-        <item>"this is the info for 6"</item>
-        <item>"this is the info for 7"</item>
+    <string-array name="performers">
+        <item>"USAF Thunderbirds|On May 25, 1953, the Air Force’s official air demonstration team, designated the 3600th Air Demonstration Unit, was activated at Luke Air Force Base, Ariz. The unit adopted the name “Thunderbirds,” influenced in part by the strong Native American culture and folklore from the southwestern United States where Luke Air Force Base is located. The Thunderbirds program objectives are to support Air Force recruiting and retention programs, reinforce public confidence and professional competence of the Air Force, strengthen moral and esprit de corps among Air Force members, support Air Force community relations and people-to-people programs, and represent the US and its armed forces to foreign nations.|http://www.afthunderbirds.com/site/</item>
+        <item>"VFA-122 Super Hornet DEMO|The Tactical Demonstration, or "Tac Demo" team flies the single-seat F/A-18E and two-seat F/A-18F as close to the "edge of the envelope" as safety and prudence allow.  The routine highlights the Rhino's maneuverability and slow-speed handling characteristics and has been very well received around the country. |http://www.vfa122.navy.mil/demo.html"</item>
+        <item>"Lima Lima Flight Team|The Lima Lima Flight Team started with one flying club. The Mentor Flyers, Inc. was organized as a non-profit corporation in 1975. It was chartered as a 15-member flying club, based at Naper Aero Club field, Outside of Naperville, Illinois. The Lima Lima Flight Team demonstration is flown with six airplanes, It includes several formation configurations, from the six ship wedge and double arrowhead, to the basic finger four and diamond formations. The team has developed a series of formation aerobatics maneuvers which demonstrate the full range of the T-34 performance envelope. Lima Lima has performed in airshows from coast to coast and border to border, thrilling more than 100 million spectators with the beauty and grace of their precision performances.|https://limalima.com/"</item>
+        <item>"Kent Pietsch Airshows|Kent Pietsch fell in love with flying when he was four years-old. Five decades later, his passion has not waned. While most aerobatic performers have one basic program, Kent executes three storied acts that leave spectators mesmerized. These include a dead-stick (turning the engine off) routine from 6,000 feet and a rooftop landing on a moving RV! However, Kent is best known for a comedy act that features a detached aileron (wing flap) and a mesmerizing wingtip-scraping pass down the runway that you must see to believe. When Kent is at the controls of his plane, it is impossible not to watch him perform|http://www.kentpietschairshows.com/pietsch/Welcome.html"</item>
+        <item>"P-51 Gunfighter|Gunfighter is one of the world’s most famous P-51s, having appeared on the airshow circuit and providing rides for over 35 years. The aircraft is a P-51 "D" model, serial number 44-73264. Today, only about 150 airworthy examples of Mustangs exist world-wide in museums, flying or under restoration.|http://www.p51gunfighter.com/"</item>
+        <item>"SNJ-6 "Texan"|"Pilot: Hailing from Overland Park, KS, RADIAL RUMBLE pilot Jeff Shetterly is a third generation aviator who grew up in Indianapolis, IN and works in the medical device industry. Jeff graduated from the United States Military Academy at West Point with a degree in Human Factors Engineering and served in the United States Army on M1A1 Abrams tanks. He was stationed in Germany and deployed several times to the Balkans, leaving military service in 2001.
+        Aircraft: SNJ-6 "Texan"
+        Lenth: 29 ft
+        Wingspan: 42 ft
+        Wing Area: 253.7 ft2
+        Height: 11 ft 8 in
+        Empty Weight: 4,158 lb
+        Top speed: 208 mph at 5,000 ft"|http://www.radialrumble.com/"</item>
+        <item>"Rifle Airshows|"Pilot: Joe "Rifle" Shetterly is an active member of the USAF where he flies the venerable A-10 Thunderbold II (Warthog).  "Rifle" is an active instructor pilot who has logged more than 5000 hours in 133 different make/models of aircraft.
+        Aircraft: RV-8 is a highly polished member of the most prolific family of homebuilt aircraft ever made.  N76540 is a beautifully built example with a unique history.  The N-number tells the story of the builder (Eugene Gaddis) who served as a fighter pilot in the United States Air Force.  The N-number stands for the jets that Gene flew during his time as a military aviator: 7 is for A-7, 6 – F106, 5 – F5, 4 – F104, and 0 represents the F-100 and the A-10."|http://rifleairshows.com/"</item>
+        <item>"G &amp; M Airshows|One of the most common questions asked is what does G&amp;M stand for?  The answer is Greg and Micki Shetterly!  Greg and Micki both have extensive backgrounds in aviation.  Greg built and flies the One Design, while Micki flies the Citabria around to shows allowing them to offer media and VIP rides.  Micki also announces for Greg while he flies the show.  After the show both of them will walk the flight line and visit with guests and help inspire the next generation of aviation enthusiasts.|http://g-and-mairshows.com/"</item>
+        <item>"MIG-17 Randy Ball|Randy W. Ball / MiG Pilot, is North America’s Premier Jet Demonstration Pilot. Randy has performed well over 1,000 performances to date! No other North American Jet Demo pilot even comes close to that number of performances. In fact, Randy is the only Jet Demo pilot (military or civilian) to be granted both a day and night unlimited aerobatic rating in jet fighters by the FAA.|http://www.fighterjets.com/"</item>
+        <item>"TORA 101-Zero|TORA 101 is a Japanese A6M Zero replica originally used in the movie Tora! Tora! Tora! TORA 101 is realistic looking, has an authentic sounding engine with three-bladed propeller, LOUD wing mounted propane machine guns, and a smoke system.|http://www.tora101.com/torahome.htm"</item>
+        <item>"Scott Francis Airshows|Scott Francis received his private license in high school and logged 2600 hours in more than 40 types of aircraft. He began flying aerobatics competitions in 2003, achieving the top level of "unlimted". Scott has been perfoming in air shows since 2006 and is currently flying the ultra-high performance MXS aircraft.|http://www.scottfrancisairshows.com/"</item>
+        <item>"Dave Buchanan Airshows|Dan was a New York &amp; Connecticut home builder and flat-track motorcycle racer; then moved to Lake Tahoe, CA where he enjoyed the thrill of flying off mountain tops. He received his Private Pilot License in 1981 and completed his first air show in 1989. Dan is also a licensed pyrotechnician and a Commercial Glider pilot. Dan's unpowered hang glider (used in daytime act) is designed by NorthWing in Wenatchee, WA (NorthWing.com). His hang gliders are registered with the FAA as experimental aircraft (N numbers).|http://www.danbuchananairshows.com"</item>
+        <item>"SOCOM Para-Commandos|The Para-Commandos perform precision freefall parachute demonstrations across the United States, informing the public about the Special Operations Command, it's mission, and the great work being performed by the Special Operations Command's Soldiers, Sailors, Marines and Airmen deployed to over 100 countries around the world. The team normally jumps from an altitude of 12,500 feet above the ground, freefalling approximately 2 miles and reaching speeds in excess of 120 miles per hour wearing smoke canisters on their feet to make them visible to the public below. |http://www.socom.mil/Pages/CommandParachuteTeam.aspx""</item>
     </string-array>
 
 </resources>

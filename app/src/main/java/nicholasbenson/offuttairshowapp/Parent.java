@@ -2,7 +2,8 @@ package nicholasbenson.offuttairshowapp;
 
 public class Parent {
     private String mTitle;
-    private String ChildInfo;
+    private String ChildBody;
+    private String ChildLink;
     private Integer color;
 
     public String getTitle() {
@@ -13,12 +14,20 @@ public class Parent {
         mTitle = title;
     }
 
-    public String getChildInfo() {
-        return ChildInfo;
+    public String getChildBody() {
+        return ChildBody;
     }
 
-    public void setChildInfo(String ChildInfo) {
-        this.ChildInfo = ChildInfo;
+    public void setChildBody(String ChildBody) {
+        this.ChildBody = ChildBody;
+    }
+
+    public String getChildLink() {
+        return ChildLink;
+    }
+
+    public void setChildLink(String ChildLink) {
+        this.ChildLink = ChildLink;
     }
 
     public Integer getColor() {

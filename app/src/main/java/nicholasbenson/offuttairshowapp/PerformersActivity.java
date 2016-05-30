@@ -8,7 +8,9 @@ import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 
@@ -18,12 +20,8 @@ public class PerformersActivity extends AppCompatActivity
 
     private static PerformersActivity ma = null;
 
-    //private int howManyPerformers = 3;
-    //private String[] performerNames = new String[] {"USAF Thunderbirds","VFA-122 Super Hornet DEMO","Lima Lima Flight Team"};
-    //private String[] performerInfo = new String[] {"this is for one", "This is for 2", "this is for three"};
-
-    private String[] performerNames;
-    private String[] performerInfo;
+    private String[] performers;
+    private String[] performersCut;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -57,19 +55,25 @@ public class PerformersActivity extends AppCompatActivity
         setContentView(R.layout.performer_screen);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         ma = this;
-        performerNames = getResources().getStringArray(R.array.performerNames);
-        performerInfo = getResources().getStringArray(R.array.performerInfo);
+
+        performers = getResources().getStringArray(R.array.performers);
+        //performerNames = ;
+        //performerInfo = getResources().getStringArray(R.array.performerInfo);
 
         mExpandableList = (ExpandableListView)findViewById(R.id.expandable_list);
 
         ArrayList<Parent> arrayParents = new ArrayList<Parent>();
 
         //here we set the parents and the children
-        for (int i = 0; i < performerNames.length; i++){
+        for (int i = 0; i < performers.length; i++){
             //for each "i" create a new Parent object to set the title and the children
+            performersCut = performers[i].split("[|]");
+
             Parent parent = new Parent();
-            parent.setTitle(performerNames[i]);
-            parent.setChildInfo(performerInfo[i]);
+            parent.setTitle(performersCut[0]);
+            parent.setChildBody(performersCut[1]);
+            parent.setChildLink(performersCut[2]);
+
             if ((i % 2) != 0)
             {
                 parent.setColor(R.color.colorPrimaryDark);
@@ -115,8 +119,8 @@ public class PerformersActivity extends AppCompatActivity
     private void handleQRIntent(Intent intent) {
         super.onNewIntent(intent);
         String item = intent.getStringExtra("offuttairshowapp.highlightitem");
-        for(int i=0; i<performerNames.length; i++){
-            if(performerNames[i].toLowerCase().contains(item)){
+        for(int i=0; i<performers.length; i++){
+            if(performers[i].toLowerCase().contains(item)){
                 mExpandableList.expandGroup(i);
                 return;
             }
