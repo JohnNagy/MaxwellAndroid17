@@ -112,7 +112,6 @@ public class MainScreenActivity extends AppCompatActivity
         return true;
     }
 
-
     public void goToWebsite (View view) {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
@@ -120,7 +119,6 @@ public class MainScreenActivity extends AppCompatActivity
         intent.setData(Uri.parse("http://www.offuttairshow.com"));
         startActivity(intent);
     }
-
 
     public void openContactActivity(View view) {
         Intent intent = new Intent(this, ContactActivity.class);
@@ -144,6 +142,11 @@ public class MainScreenActivity extends AppCompatActivity
 
     public void openAboutOffuttActivity(View view) {
         Intent intent = new Intent(this, AboutOffuttActivity.class);
+        startActivity(intent);
+    }
+
+    public void openGMapsActivity(View view) {
+        Intent intent = new Intent(this, GMapsFragment.class);
         startActivity(intent);
     }
 

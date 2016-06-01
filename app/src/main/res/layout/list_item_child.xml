@@ -7,6 +7,8 @@
     android:layout_height="wrap_content"
     android:id="@+id/list_item_child"
     android:gravity="center_vertical|center_horizontal"
+    android:background="@color/colorPrimaryLightTransparent"
+
     >
 
     <TextView android:layout_width="match_parent"
@@ -16,7 +18,7 @@
         android:padding="10dp"
         android:textAlignment="center"
         android:layout_gravity="center_vertical"
-        android:background="@color/colorPrimaryLight"/>
+        />
 
     <TextView android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,6 +28,6 @@
         android:textSize="20sp"
         android:padding="10dp"
         android:layout_gravity="center_vertical"
-        android:background="@color/colorPrimaryLight"/>
+        />
 
 </LinearLayout>

@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -17,10 +16,12 @@ public class CustomExpandListAdapter extends BaseExpandableListAdapter
 {
     private LayoutInflater inflater;
     private ArrayList<Parent> mParent;
+    private Context mContext;
 
     public CustomExpandListAdapter(Context context, ArrayList<Parent> parent){
         mParent = parent;
         inflater = LayoutInflater.from(context);
+        mContext = context;
     }
 
 
@@ -34,12 +35,6 @@ public class CustomExpandListAdapter extends BaseExpandableListAdapter
     public int getChildrenCount(int groupPosition) {
         return 1;
     }
-
-    /*@Override
-    //counts the number of children items so the list knows how many times calls getChildView() method
-    public int getChildrenCount(int i) {
-        return mParent.get(i).getArrayChildren().size();
-    }*/
 
     @Override
     //gets the title of each parent/group
@@ -75,20 +70,34 @@ public class CustomExpandListAdapter extends BaseExpandableListAdapter
         holder.groupPosition = groupPosition;
 
         if (view == null) {
-            view = inflater.inflate(R.layout.performer_list_item_parent, viewGroup,false);
+            view = inflater.inflate(R.layout.list_item_parent, viewGroup,false);
         }
 
+        //sets the title text
         TextView textView = (TextView) view.findViewById(R.id.list_item_text_view);
         textView.setText(getGroup(groupPosition).toString());
 
-        /*LinearLayout ll = (LinearLayout)view.findViewById(R.id.performers_image);
-        ll.setBackgroundResource(PerformersActivity.getContext().getApplicationContext().getResources().getIdentifier("performer_" + groupPosition, "drawable", PerformersActivity.getContext().getApplicationInfo().packageName));*/
-
+        //sets the title image
         ImageView imgView = (ImageView)view.findViewById(R.id.imageView);
-        imgView.setImageResource(
-                PerformersActivity.getContext().getApplicationContext().getResources().getIdentifier("performer_" + groupPosition, "drawable", PerformersActivity.getContext().getApplicationInfo().packageName)
-        );
+        String imgTitle = mContext.toString();
 
+        if (imgTitle.toLowerCase().contains("performer"))
+        {
+            imgTitle = "performer_" + groupPosition;
+        }
+        else if (imgTitle.toLowerCase().contains("static"))
+        {
+            imgTitle = "static_" + groupPosition;
+        }
+        else if (imgTitle.toLowerCase().contains("exhibitor"))
+        {
+            imgTitle = "exhibitor_" + groupPosition;
+        }
+
+        //.getApplicationInfo().name.split("[.]",2) + "_" + groupPosition;
+        imgView.setImageResource(
+            mContext.getApplicationContext().getResources().getIdentifier(imgTitle, "drawable", mContext.getApplicationInfo().packageName)
+        );
 
         view.setTag(holder);
 
@@ -105,7 +114,7 @@ public class CustomExpandListAdapter extends BaseExpandableListAdapter
         holder.groupPosition = groupPosition;
 
         if (view == null) {
-            view = inflater.inflate(R.layout.performer_list_item_child, viewGroup,false);
+            view = inflater.inflate(R.layout.list_item_child, viewGroup,false);
         }
 
         TextView tvBody = (TextView) view.findViewById(R.id.list_item_text_child_body);
@@ -130,17 +139,6 @@ public class CustomExpandListAdapter extends BaseExpandableListAdapter
         /* used to make the notifyDataSetChanged() method work */
         super.registerDataSetObserver(observer);
     }
-
-// Intentionally put on comment, if you need on click deactivate it
-/*  @Override
-    public void onClick(View view) {
-        ViewHolder holder = (ViewHolder)view.getTag();
-        if (view.getId() == holder.button.getId()){
-
-           // DO YOUR ACTION
-        }
-    }*/
-
 
     protected class ViewHolder {
         protected int childPosition;

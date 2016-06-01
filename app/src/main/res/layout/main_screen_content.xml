@@ -76,7 +76,8 @@
                 android:id="@+id/buttonDirections"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp"
-                android:background="@drawable/image008" />
+                android:background="@drawable/image008"
+                android:onClick="openGMapsActivity"/>
 
             <Button
                 android:layout_width="80dp"

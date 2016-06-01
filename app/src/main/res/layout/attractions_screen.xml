@@ -69,10 +69,11 @@
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Statistics"
+                android:text="Statics"
                 android:id="@+id/btnStatistics"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                android:onClick="openStaticsActivity"/>
 
             <Button
                 android:layout_width="80dp"
@@ -81,7 +82,8 @@
                 android:id="@+id/btnExhibitors"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp"
-                android:layout_column="2" />
+                android:layout_column="2"
+                android:onClick="openExhibitorsActivity"/>
 
         </TableRow>
 
