@@ -108,7 +108,7 @@
         <activity
             android:name=".GMapsFragment"
             android:label="@string/title_activity_gmaps"
-            android:parentActivityName=".MainScreenActivity"/>
+            android:parentActivityName=".MainScreenActivity" />
     </application>
 
 </manifest>
