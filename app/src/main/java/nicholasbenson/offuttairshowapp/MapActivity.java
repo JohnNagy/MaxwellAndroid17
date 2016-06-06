@@ -1,12 +1,9 @@
 package nicholasbenson.offuttairshowapp;
 
-import android.graphics.Matrix;
+
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MotionEvent;
-import android.view.ScaleGestureDetector;
-import android.widget.ImageView;
 
 /**
  * Created by Nick on 5/9/2016.
@@ -25,7 +22,5 @@ public class MapActivity  extends AppCompatActivity{
         img.setMaxZoom(4f);
         setContentView(img);
     }
-
-
 
 }

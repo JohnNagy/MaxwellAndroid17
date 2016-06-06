@@ -59,6 +59,16 @@ public class AttractionsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void openStaticsActivity(View view) {
+        Intent intent = new Intent(this, StaticsActivity.class);
+        startActivity(intent);
+    }
+
+    public void openExhibitorsActivity(View view) {
+        Intent intent = new Intent(this, ExhibitorsActivity.class);
+        startActivity(intent);
+    }
+
     public void goToWebsite (View view) {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
@@ -66,5 +76,6 @@ public class AttractionsActivity extends AppCompatActivity {
         intent.setData(Uri.parse("http://www.offuttairshow.com"));
         startActivity(intent);
     }
+
 
 }

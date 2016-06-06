@@ -46,6 +46,7 @@ public class MainScreenActivity extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -68,6 +69,8 @@ public class MainScreenActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+        //ScrollTextView scrolltext=(ScrollTextView) findViewById(R.id.marquee);
+
         return true;
     }
 
@@ -90,7 +93,7 @@ public class MainScreenActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        /*if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 
@@ -102,13 +105,12 @@ public class MainScreenActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_send) {
 
-        }
+        }*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
 
     public void goToWebsite (View view) {
         Intent intent = new Intent();
@@ -117,7 +119,6 @@ public class MainScreenActivity extends AppCompatActivity
         intent.setData(Uri.parse("http://www.offuttairshow.com"));
         startActivity(intent);
     }
-
 
     public void openContactActivity(View view) {
         Intent intent = new Intent(this, ContactActivity.class);
@@ -141,6 +142,20 @@ public class MainScreenActivity extends AppCompatActivity
 
     public void openAboutOffuttActivity(View view) {
         Intent intent = new Intent(this, AboutOffuttActivity.class);
+        startActivity(intent);
+    }
+
+    public void openBPTab(View view)
+    {
+        Intent intent = new Intent(this, DirectsAndBikePark.class);
+        intent.putExtra("bike_park", 1);
+        startActivity(intent);
+    }
+
+    public void openDirectionsTab(View view)
+    {
+        Intent intent = new Intent(this, DirectsAndBikePark.class);
+        intent.putExtra("bike_park", 0);
         startActivity(intent);
     }
 
@@ -190,10 +205,4 @@ public class MainScreenActivity extends AppCompatActivity
         }
     }
 
-/*
-    public void openFAQActivity(View view) {
-        Intent intent = new Intent(this, BasicActivity.class);
-        startActivity(intent);
-    }
-*/
 }

@@ -33,24 +33,24 @@
                 android:onClick="openAttractionsActivity"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp"
-                android:background="@drawable/image007" />
+                android:background="@drawable/attractions" />
 
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="@string/Bike_Park_Activity_Label"
                 android:id="@+id/buttonBikeNPark"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp"
-                android:background="@drawable/car" />
+                android:background="@drawable/bike_and_park"
+                android:onClick="openBPTab"/>
 
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="@string/Kid_Zone_Activity_Label"
                 android:id="@+id/buttonKidsZone"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                android:background="@drawable/kids_zone"/>
         </TableRow>
 
         <TableRow
@@ -63,7 +63,6 @@
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="@string/Sponsors_Activity_Label"
                 android:id="@+id/buttonSponsors"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp"
@@ -72,20 +71,20 @@
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="@string/Directions_Activity_Label"
                 android:id="@+id/buttonDirections"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp"
-                android:background="@drawable/image008" />
+                android:background="@drawable/directions"
+                android:onClick="openDirectionsTab"/>
 
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="@string/Social_Media_Activity_Label"
                 android:id="@+id/buttonSocialMedia"
                 android:onClick="openSocialMediaActivity"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                android:background="@drawable/social_media"/>
 
         </TableRow>
 
@@ -99,30 +98,29 @@
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="@string/About_Offutt_Activity_Label"
                 android:id="@+id/buttonAboutOffutt"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp"
-                android:onClick="openAboutOffuttActivity" />
+                android:onClick="openAboutOffuttActivity"
+                android:background="@drawable/about_offutt"/>
 
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="@string/FAQ_Activity_Label"
                 android:id="@+id/buttonFAQ"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp"
                 android:onClick="openFAQActivity"
-                android:background="@drawable/image005" />
+                android:background="@drawable/faq" />
 
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="@string/Contact_Activity_Label"
                 android:id="@+id/buttonContactInfo"
                 android:onClick="openContactActivity"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                android:background="@drawable/contact"/>
         </TableRow>
 
     </TableLayout>

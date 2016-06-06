@@ -8,20 +8,18 @@ import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ExpandableListView;
-import android.widget.ImageView;
 
 import java.util.ArrayList;
 
-public class PerformersActivity extends AppCompatActivity
+public class ExhibitorsActivity extends AppCompatActivity
 {
     private ExpandableListView mExpandableList;
 
-    private static PerformersActivity ma = null;
+    private static ExhibitorsActivity ma = null;
 
-    private String[] performers;
-    private String[] performersCut;
+    private String[] Exhibitors;
+    private String[] ExhibitorsCut;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -52,27 +50,25 @@ public class PerformersActivity extends AppCompatActivity
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.performer_screen);
+        setContentView(R.layout.exhibitors_screen);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         ma = this;
 
-        performers = getResources().getStringArray(R.array.performers);
-        //performerNames = ;
-        //performerInfo = getResources().getStringArray(R.array.performerInfo);
+        Exhibitors = getResources().getStringArray(R.array.exhibitors);
 
         mExpandableList = (ExpandableListView)findViewById(R.id.expandable_list);
 
         ArrayList<Parent> arrayParents = new ArrayList<Parent>();
 
         //here we set the parents and the children
-        for (int i = 0; i < performers.length; i++){
+        for (int i = 0; i < Exhibitors.length; i++){
             //for each "i" create a new Parent object to set the title and the children
-            performersCut = performers[i].split("[|]");
+            ExhibitorsCut = Exhibitors[i].split("[|]");
 
             Parent parent = new Parent();
-            parent.setTitle(performersCut[0]);
-            parent.setChildBody(performersCut[1]);
-            parent.setChildLink(performersCut[2]);
+            parent.setTitle(ExhibitorsCut[0]);
+            parent.setChildBody(ExhibitorsCut[1]);
+            parent.setChildLink(ExhibitorsCut[2]);
 
             if ((i % 2) != 0)
             {
@@ -83,12 +79,14 @@ public class PerformersActivity extends AppCompatActivity
                 parent.setColor(R.color.colorAccent);
             }
 
+
+
             //in this array we add the Parent object. We will use the arrayParents at the setAdapter
             arrayParents.add(parent);
         }
 
         //sets the adapter that provides data to the list.
-        mExpandableList.setAdapter(new CustomExpandListAdapter(PerformersActivity.this,arrayParents));
+        mExpandableList.setAdapter(new CustomExpandListAdapter(ExhibitorsActivity.this,arrayParents));
 
         try {
             handleQRIntent(getIntent());
@@ -113,13 +111,13 @@ public class PerformersActivity extends AppCompatActivity
     private void handleQRIntent(Intent intent) {
         super.onNewIntent(intent);
         String item = intent.getStringExtra("offuttairshowapp.highlightitem");
-        for(int i=0; i<performers.length; i++){
-            if(performers[i].toLowerCase().contains(item)){
+        for(int i = 0; i< Exhibitors.length; i++){
+            if(Exhibitors[i].toLowerCase().contains(item)){
                 mExpandableList.expandGroup(i);
                 return;
             }
         }
-        //If not found, will leave user at main performer page.
+        //If not found, will leave user at main exhibitors page.
     }
 
     public static Context getContext()
