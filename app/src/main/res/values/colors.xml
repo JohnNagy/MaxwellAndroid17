@@ -11,4 +11,6 @@
 
     <color name="colorAccent">#fe0b17</color>
     <color name="colorAccentTransparent">#CCfe0b17</color>
+
+    <color name="indicator">#ecd95a</color>
 </resources>

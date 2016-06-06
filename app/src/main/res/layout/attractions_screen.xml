@@ -26,29 +26,29 @@
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="@string/Schedule_Activity_Label"
                 android:id="@+id/btnSchedule"
                 android:onClick="openPerformersActivity"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                android:background="@drawable/schedule"/>
 
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="@string/Map_Activity_Label"
                 android:id="@+id/btnMap"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp"
-                android:onClick="openMapActivity" />
+                android:onClick="openMapActivity"
+                android:background="@drawable/map" />
 
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="@string/Performers_Activity_Label"
                 android:id="@+id/btnPerformers"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp"
-                android:onClick="openPerformersActivity" />
+                android:onClick="openPerformersActivity"
+                android:background="@drawable/performers" />
         </TableRow>
 
         <TableRow
@@ -61,29 +61,29 @@
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="@string/Sponsors_Activity_Label"
                 android:id="@+id/btnSponsors"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                android:background="@drawable/sponsors"/>
 
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Statics"
                 android:id="@+id/btnStatistics"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp"
-                android:onClick="openStaticsActivity"/>
+                android:onClick="openStaticsActivity"
+                android:background="@drawable/statics"/>
 
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Exhibitors"
                 android:id="@+id/btnExhibitors"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp"
                 android:layout_column="2"
-                android:onClick="openExhibitorsActivity"/>
+                android:onClick="openExhibitorsActivity"
+                android:background="@drawable/exhibitors" />
 
         </TableRow>
 
@@ -97,19 +97,19 @@
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Food"
                 android:id="@+id/btnFood"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                android:background="@drawable/food" />
 
             <Button
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:text="Vendors"
                 android:id="@+id/btnVendors"
                 android:onClick="openContactActivity"
                 android:layout_gravity="center_vertical"
-                android:layout_margin="10dp" />
+                android:layout_margin="10dp"
+                />
         </TableRow>
     </TableLayout>
 

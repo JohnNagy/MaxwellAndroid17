@@ -105,4 +105,6 @@
     </string-array>
     <string name="title_activity_gmaps">Map</string>
     <string name="title_activity_gmaps_content">GMapsContentActivity</string>
+    <string name="BikeParkIntro"><![CDATA[Enjoy some fresh air as you access Offutt AFB from various bike lanes from the Bellevue, Omaha & Papillion Metro Areas right to the front gate of the base. You can then bypass the automobile traffic and ride your bicycle to a bicycle only valet parking lot only 250ft from the closest ramp entrance. Check out how to get there on the map via the link below.]]></string>
+    <string name="BikeParkSafetyTips">Biking Safety Tips: We here at Offutt AFB want you to be safe as you ride to the base, please take a look at some safety tips and information via the link below.</string>
 </resources>

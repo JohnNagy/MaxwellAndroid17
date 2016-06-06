@@ -145,8 +145,17 @@ public class MainScreenActivity extends AppCompatActivity
         startActivity(intent);
     }
 
-    public void openGMapsActivity(View view) {
-        Intent intent = new Intent(this, GMapsFragment.class);
+    public void openBPTab(View view)
+    {
+        Intent intent = new Intent(this, DirectsAndBikePark.class);
+        intent.putExtra("bike_park", 1);
+        startActivity(intent);
+    }
+
+    public void openDirectionsTab(View view)
+    {
+        Intent intent = new Intent(this, DirectsAndBikePark.class);
+        intent.putExtra("bike_park", 0);
         startActivity(intent);
     }
 
@@ -196,10 +205,4 @@ public class MainScreenActivity extends AppCompatActivity
         }
     }
 
-/*
-    public void openFAQActivity(View view) {
-        Intent intent = new Intent(this, BasicActivity.class);
-        startActivity(intent);
-    }
-*/
 }
