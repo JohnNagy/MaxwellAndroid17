@@ -80,7 +80,7 @@
             android:name=".MapActivity"
             android:label="@string/Map_Activity_Label"
             android:parentActivityName=".AttractionsActivity"
-            android:screenOrientation="portrait" />
+             />
         <activity
             android:name=".StaticsActivity"
             android:label="Statics"
@@ -114,7 +114,7 @@
 
         <activity android:name=".BikeParkMap"
             android:label="Bike &amp; Park Map"
-            android:screenOrientation="portrait"
+
             />
     </application>
 

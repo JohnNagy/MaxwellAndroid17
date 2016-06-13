@@ -5,11 +5,17 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/poster_50_g_blur_540_902"
     >
 
-    <ExpandableListView
+    <ExpandableListView android:id="@+id/expandable_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/expandableListView"
-        android:layout_gravity="center_horizontal" />
+        android:transcriptMode="disabled"
+        android:listSelector="@android:color/transparent"
+        android:groupIndicator="@null"
+        android:layout_margin="20dp"
+        android:cacheColorHint="#00000000"
+        android:layout_centerHorizontal="true"
+        android:divider="@android:color/transparent" />
 </LinearLayout>

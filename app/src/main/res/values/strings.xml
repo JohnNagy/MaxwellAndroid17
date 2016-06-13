@@ -9,7 +9,7 @@
     <string name="Contact_Activity_Label">Contact</string>
     <string name="Social_Media_Activity_Label">Social Media</string>
     <string name="Attractions_Activity_Label">Attractions</string>
-    <string name="Main_Default_Marquee">Offutt Air Show 2016. July 30-31. More info at <a href="www.google.com">OffuttAirShow.com</a>. No Coolers, Backpacks, or Pets.</string>
+    <string name="Main_Default_Marquee">Offutt Air Show 2016.      July 30–31.      More info at <a href="www.google.com">OffuttAirShow.com</a>.      No Coolers, Backpacks, or Pets.</string>
     <string name="title_activity_performers">PerformersActivity</string>
     <string name="Performers_Activity_Label">Performers</string>
     <string name="FAQ_Activity_Label">FAQ</string>
@@ -94,16 +94,30 @@
         <item>USO|For 75 years, the USO has been dedicated to supporting America\’s service members and their loved ones. America\’s 1.3 million active duty service members receive an estimated annual total of 10 million acts of connection from USO centers, services and volunteers.|https://www.uso.org/</item>
         <item>Wounded Warrior Project|Wounded Warrior Project\'s mission is to honor and empower Wounded Warriors. Their vision is to foster the most successful, well-adjusted generation of wounded service members in our nation\'s history. Their purpose is to raise awareness and enlist the public\'s aid for the needs of injured service members, help injured service members aid and assist each other, and provide unique, direct programs and services to meet the needs of injured service members.|https://www.woundedwarriorproject.org/</item>
         <item>Soundz of Freedom|?|http://soundzoffreedom.weebly.com/</item>
-        <item>Heartland Organiztion of Rocketry|?|?</item>
+        <item>Heartland Organization of Rocketry|?|?</item>
         <item>Strike Booster Club|?|?</item>
         <item>VA|?|http://www.va.gov/</item>
         <item>Department of VA Regional Office|?|http://www.benefits.va.gov/lincoln/</item>
         <item>Air Force Reserve Recruiting|?|https://afreserve.com/</item>
         <item>Navy|The mission of the Navy is to maintain, train and equip combat-ready Naval forces capable of winning wars, deterring aggression and maintaining freedom of the seas.|http://www.navy.com/</item>
-
-
     </string-array>
-    <string name="title_activity_gmaps">Map</string>
+
+    <!--TODO is the first faq right?-->
+    <string-array name="faq">
+        <item>Why aren\'t there any times listed with the performances?|One of the things we\’ve learned during past air shows is that schedules are almost impossible to keep. There are hundreds of minor issues that can arise which have in the past led to delays, schedule swaps, or adjusted performances. Additionally, some fly-bys, particularly of military aircraft in high demand for the Global War on Terrorism, may not be confirmed until the day of the air show. For this reason we will not be publishing a schedule of events.</item>
+        <item>Is it safe to come to the air show?|Safety is always a primary concern at air shows. Offutt AFB works very closely with local and federal authorities to ensure safety. Offutt AFB follows and enforces all rules and regulations as required. You will notice extra uniformed security at the air show, both military and civilian. </item>
+        <item>What are the changes to air show security?|The heightened security instituted during the past few years is still in effect. All backpacks, coolers and tote bags must be left in your vehicle and will not be allowed on the airfield. Signs will be posted at the entrances to the parking and gate areas reminding you of these restrictions. Gate officials may refuse admittance to persons trying to enter with such items. Please remember that Offutt AFB is not responsible for items left in vehicles in the parking areas. </item>
+        <item>If I cannot bring something into the air show, can I go out to my car during the show?|Yes. Since this show has no admission fee, you may leave and re-enter as you desire. Anyone re-entering will have to go through security checkpoints again. </item>
+        <item>Is there viewing space available for those with Special Needs?|Yes.  The entrance closest to the Fire station is best for those with Special Needs.  After you have passed through gate security, proceed to the nearest Information Booth for directions to the Special Needs Viewing Area. </item>
+        <item>Can I bring a fanny pack?|Small fanny packs are permitted, subject to approval by gate security personnel and a hand-search at the gate. </item>
+        <item>Can I bring a purse?|Small purses are permitted, subject to approval by gate security personnel and a hand-search at the gate. Large purses (tote bag type) are not permitted. </item>
+        <item>Can I bring my camera, video camera and cell phone?|Yes. There are no restrictions on electronics. However, large camera bags are not permitted. Bring only necessary camera equipment, leaving extra attachments at home. A small fanny pack or camera vest is useful for carrying extra film and small lenses. </item>
+        <item>Can I bring water, drinks and food?|Yes. The items must be hand-carried and cannot be in a cooler or carry bag. All items brought in are subject to approval by gate security personnel and a hand-search at the gate. </item>
+        <item>Can I bring a folding chair?|Yes. If your folding chair comes in a carrying case, please have the chair out of the case as you go through the security check point. </item>
+        <item>Can parents bring a stroller, diaper bag, change of clothes, etc. for their children?|Yes. Strollers and wagons will be hand-searched at the gate. Please bring only necessary items in a small diaper bag, subject to hand-search at the gate. Large diaper bags may not be permitted. You can return to your vehicle during the show to get extra clothes, re-stock diaper items, etc. </item>
+    </string-array>
+
+    <string name="title_activity_gmaps">Directions and Parking</string>
     <string name="title_activity_gmaps_content">GMapsContentActivity</string>
     <string name="BikeParkIntro"><![CDATA[Enjoy some fresh air as you access Offutt AFB from various bike lanes from the Bellevue, Omaha & Papillion Metro Areas right to the front gate of the base. You can then bypass the automobile traffic and ride your bicycle to a bicycle only valet parking lot only 250ft from the closest ramp entrance. Check out how to get there on the map via the link below.]]></string>
     <string name="BikeParkSafetyTips">Biking Safety Tips: We here at Offutt AFB want you to be safe as you ride to the base, please take a look at some safety tips and information via the link below.</string>

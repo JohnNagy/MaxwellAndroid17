@@ -74,16 +74,17 @@ public class PerformersActivity extends AppCompatActivity
             parent.setChildBody(performersCut[1]);
             parent.setChildLink(performersCut[2]);
 
-            if ((i % 2) != 0)
+
+            //todo remove this??
+            /*if ((i % 2) != 0)
             {
                 parent.setColor(R.color.colorPrimaryDark);
             }
             else
             {
                 parent.setColor(R.color.colorAccent);
-            }
+            }*/
 
-            //in this array we add the Parent object. We will use the arrayParents at the setAdapter
             arrayParents.add(parent);
         }
 
