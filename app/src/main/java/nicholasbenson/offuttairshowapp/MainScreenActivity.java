@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,9 +14,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewTreeObserver;
+import android.widget.RelativeLayout;
 
 public class MainScreenActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private ScrollTextView scrolltext;
+    public int width;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +39,6 @@ public class MainScreenActivity extends AppCompatActivity
             }
         });*/
 
-        ScrollTextView scrolltext=(ScrollTextView) findViewById(R.id.marquee);
-        scrolltext.setText(R.string.Main_Default_Marquee);
-        scrolltext.setTextColor(Color.WHITE);
-        scrolltext.startScroll();
-
-
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -49,6 +48,23 @@ public class MainScreenActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        scrolltext=(ScrollTextView) findViewById(R.id.marquee);
+        scrolltext.setText(R.string.Main_Default_Marquee);
+        scrolltext.setTextColor(Color.WHITE);
+
+        scrolltext.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+            @Override
+            public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                if (left == 0 && top == 0 && right == 0 && bottom == 0) {
+                    return;
+                }
+                width = scrolltext.getRight();
+                scrolltext.startScroll(width);
+            }
+
+        });
+
 
     }
 

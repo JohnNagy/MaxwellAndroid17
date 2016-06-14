@@ -9,7 +9,7 @@
     <string name="Contact_Activity_Label">Contact</string>
     <string name="Social_Media_Activity_Label">Social Media</string>
     <string name="Attractions_Activity_Label">Attractions</string>
-    <string name="Main_Default_Marquee">Offutt Air Show 2016.      July 30–31.      More info at <a href="www.google.com">OffuttAirShow.com</a>.      No Coolers, Backpacks, or Pets.</string>
+    <string name="Main_Default_Marquee">Offutt Air Show 2016. July 30–31. More info at <a href="www.google.com">OffuttAirShow.com</a>. No Coolers, Backpacks, or Pets.</string>
     <string name="title_activity_performers">PerformersActivity</string>
     <string name="Performers_Activity_Label">Performers</string>
     <string name="FAQ_Activity_Label">FAQ</string>
