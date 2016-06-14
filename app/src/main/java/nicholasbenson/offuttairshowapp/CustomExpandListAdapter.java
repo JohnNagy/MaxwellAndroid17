@@ -2,7 +2,6 @@ package nicholasbenson.offuttairshowapp;
 
 import android.content.Context;
 import android.database.DataSetObserver;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,13 +76,6 @@ public class CustomExpandListAdapter extends BaseExpandableListAdapter
         //sets the title text
         TextView textView = (TextView) view.findViewById(R.id.list_item_text_view);
         textView.setText(getGroup(groupPosition).toString());
-
-        String[] str = viewGroup.getContext().getResources().getStringArray(R.array.faq);
-        if (str[0].contains(getGroup(groupPosition).toString()))
-        {
-            Log.d("CREATION", "did it");
-            view.findViewById(R.id.divider).setVisibility(View.GONE);
-        }
 
         //sets the title image
         ImageView imgView = (ImageView)view.findViewById(R.id.imageView);
