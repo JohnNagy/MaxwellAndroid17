@@ -1,10 +1,17 @@
 package nicholasbenson.offuttairshowapp;
 
+
+import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.ActionBar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,39 +22,135 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewTreeObserver;
+import android.widget.ExpandableListView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
-public class MainScreenActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
+public class MainScreenActivity extends AppCompatActivity{
+
+    private DrawerLayout mDrawerLayout;
+    MenuExpandListAdapter mMenuAdapter;
+    ExpandableListView expandableList;
+    List<ExpandedMenuModel> listDataHeader;
+    HashMap<ExpandedMenuModel, List<String>> listDataChild;
+    List<String> heading1;
     private ScrollTextView scrolltext;
     public int width;
+    public Context ctx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_screen_drawer);
+        setContentView(R.layout.activity_navigation_view);
+        ctx = getApplicationContext();
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_menu_white_24dp);
         setSupportActionBar(toolbar);
 
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                scrolltext.pauseScroll();
             }
-        });*/
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+                scrolltext.resumeScroll();
+            }
+        };
+        mDrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
 
+        expandableList = (ExpandableListView) findViewById(R.id.navigationmenu);
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        prepareListData();
+
+        mMenuAdapter = new MenuExpandListAdapter(this, listDataHeader, listDataChild, expandableList);
+        expandableList.setAdapter(mMenuAdapter);
+
+        expandableList.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+            @Override
+            public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
+                Intent intent;
+                switch (i1)
+                {
+                    case 0:
+                        intent = new Intent(ctx, SocialMediaActivity.class);
+                        startActivity(intent);
+                        return true;
+                    case 1:
+                        intent = new Intent(ctx, MapActivity.class);
+                        startActivity(intent);
+                        return true;
+                    case 2:
+                        intent = new Intent(ctx, PerformersActivity.class);
+                        startActivity(intent);
+                        return true;
+                    case 3:
+                        intent = new Intent(ctx, SponsorsActivity.class);
+                        startActivity(intent);
+                        return true;
+                    case 4:
+                        intent = new Intent(ctx, StaticsActivity.class);
+                        startActivity(intent);
+                        return true;
+                    case 5:
+                        intent = new Intent(ctx, ExhibitorsActivity.class);
+                        startActivity(intent);
+                        return true;
+                    case 6:
+                        intent = new Intent(ctx, SocialMediaActivity.class);
+                        startActivity(intent);
+                        return true;
+                }
+                return false;
+            }
+        });
+        expandableList.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+            @Override
+            public boolean onGroupClick(ExpandableListView expandableListView, View view, int i, long l) {
+                switch (i)
+                {
+                    case 0:
+                        return false;
+                    case 1:
+                        openBPTab();
+                        return true;
+                    case 2:
+                        //openKidZoneActivity();
+                        return true;
+                    case 3:
+                        openSponsorsActivity();
+                        return true;
+                    case 4:
+                        openDirectionsTab();
+                        return true;
+                    case 5:
+                        openSocialMediaActivity();
+                        return true;
+                    case 6:
+                        openAboutOffuttActivity();
+                        return true;
+                    case 7:
+                        openFAQActivity();
+                        return true;
+                    case 8:
+                        openContactActivity();
+                        return true;
+                }
+                return false;
+            }
+        });
 
         scrolltext=(ScrollTextView) findViewById(R.id.marquee);
         scrolltext.setText(R.string.Main_Default_Marquee);
@@ -62,11 +165,29 @@ public class MainScreenActivity extends AppCompatActivity
                 width = scrolltext.getRight();
                 scrolltext.startScroll(width);
             }
-
         });
-
-
     }
+
+    /*@TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+
+        Drawable drawable_groupIndicator =
+                getResources().getDrawable(R.drawable.ic_menu_white_24dp);
+        int drawable_width = drawable_groupIndicator.getMinimumWidth();
+
+        if (android.os.Build.VERSION.SDK_INT <
+                android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
+            expandableList.setIndicatorBounds(
+                    expandableList.getWidth() - drawable_width,
+                    expandableList.getWidth());
+        } else {
+            expandableList.setIndicatorBoundsRelative(
+                    expandableList.getWidth() - drawable_width,
+                    expandableList.getWidth());
+        }
+    }*/
 
     @Override
     public void onBackPressed() {
@@ -83,49 +204,94 @@ public class MainScreenActivity extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
-        //ScrollTextView scrolltext=(ScrollTextView) findViewById(R.id.marquee);
-
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
+        switch (item.getItemId())
+        {
+            case android.R.id.home:
+                mDrawerLayout.openDrawer(GravityCompat.START);
+                return true;
+
             case R.id.action_settings:
                 return true;
+
             case R.id.menu_qr_scanner:
                 scanQR();
                 return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
+    private void prepareListData() {
+        listDataHeader = new ArrayList<>();
+        listDataChild = new HashMap<>();
 
-        /*if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        ExpandedMenuModel item1 = new ExpandedMenuModel(ctx);
+        item1.setIconName(getString(R.string.Attractions_Activity_Label));
+        item1.setIconImg(R.drawable.attractions_notext_nobg);
+        item1.setIndicatorImg(R.drawable.ic_arrow_drop_down_black_24dp);
+        item1.setIndicatorTint(getResources().getColor(R.color.colorPrimary));
+        listDataHeader.add(item1);
 
-        } else if (id == R.id.nav_slideshow) {
+        ExpandedMenuModel item2 = new ExpandedMenuModel(ctx);
+        item2.setIconName(getString(R.string.Bike_Park_Activity_Label));
+        item2.setIconImg(R.drawable.bike_and_park_notext_nobg);
+        listDataHeader.add(item2);
 
-        } else if (id == R.id.nav_manage) {
+        ExpandedMenuModel item3 = new ExpandedMenuModel(ctx);
+        item3.setIconName(getString(R.string.Kid_Zone_Activity_Label));
+        item3.setIconImg(R.drawable.kids_zone_notext_nobg);
+        listDataHeader.add(item3);
 
-        } else if (id == R.id.nav_share) {
+        ExpandedMenuModel item4 = new ExpandedMenuModel(ctx);
+        item4.setIconName(getString(R.string.Sponsors_Activity_Label));
+        item4.setIconImg(R.drawable.sponsors_notext_nobg);
+        listDataHeader.add(item4);
 
-        } else if (id == R.id.nav_send) {
+        ExpandedMenuModel item5 = new ExpandedMenuModel(ctx);
+        item5.setIconName(getString(R.string.Directions_Activity_Label));
+        item5.setIconImg(R.drawable.directions_notext_nobg);
+        listDataHeader.add(item5);
 
-        }*/
+        ExpandedMenuModel item6 = new ExpandedMenuModel(ctx);
+        item6.setIconName(getString(R.string.Social_Media_Activity_Label));
+        item6.setIconImg(R.drawable.social_media_notext_nobg);
+        listDataHeader.add(item6);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
+        ExpandedMenuModel item7 = new ExpandedMenuModel(ctx);
+        item7.setIconName(getString(R.string.About_Offutt_Activity_Label));
+        item7.setIconImg(R.drawable.about_offutt_notext_nobg);
+        listDataHeader.add(item7);
+
+        ExpandedMenuModel item8 = new ExpandedMenuModel(ctx);
+        item8.setIconName(getString(R.string.FAQ_Activity_Label));
+        item8.setIconImg(R.drawable.faq_notext_nobg);
+        listDataHeader.add(item8);
+
+        ExpandedMenuModel item9 = new ExpandedMenuModel(ctx);
+        item9.setIconName(getString(R.string.Contact_Activity_Label));
+        item9.setIconImg(R.drawable.contact_notext_nobg);
+        listDataHeader.add(item9);
+
+
+        heading1 = new ArrayList<String>();
+        heading1.add(getString(R.string.Schedule_Activity_Label));
+        heading1.add(getString(R.string.Map_Activity_Label));
+        heading1.add(getString(R.string.Performers_Activity_Label));
+        heading1.add(getString(R.string.Sponsors_Activity_Label));
+        heading1.add(getString(R.string.Statics_Activity_Label));
+        heading1.add(getString(R.string.Exhibitors_Activity_Label));
+        heading1.add(getString(R.string.Food_Activity_Label));
+
+        listDataChild.put(listDataHeader.get(0), heading1);// Header, Child data
+
+
     }
 
     public void goToWebsite (View view) {
@@ -134,9 +300,13 @@ public class MainScreenActivity extends AppCompatActivity
         intent.addCategory(Intent.CATEGORY_BROWSABLE);
         intent.setData(Uri.parse("http://www.offuttairshow.com"));
         startActivity(intent);
-    }
+        }
 
     public void openContactActivity(View view) {
+        Intent intent = new Intent(this, ContactActivity.class);
+        startActivity(intent);
+    }
+    public void openContactActivity() {
         Intent intent = new Intent(this, ContactActivity.class);
         startActivity(intent);
     }
@@ -145,13 +315,34 @@ public class MainScreenActivity extends AppCompatActivity
         Intent intent = new Intent(this, SocialMediaActivity.class);
         startActivity(intent);
     }
+    public void openSocialMediaActivity() {
+        Intent intent = new Intent(this, SocialMediaActivity.class);
+        startActivity(intent);
+    }
 
     public void openAttractionsActivity(View view) {
         Intent intent = new Intent(this, AttractionsActivity.class);
         startActivity(intent);
     }
+    public void openAttractionsActivity() {
+        Intent intent = new Intent(this, AttractionsActivity.class);
+        startActivity(intent);
+    }
+
+    public void openSponsorsActivity(View view) {
+        Intent intent = new Intent(this, SponsorsActivity.class);
+        startActivity(intent);
+    }
+    public void openSponsorsActivity() {
+        Intent intent = new Intent(this, SponsorsActivity.class);
+        startActivity(intent);
+    }
 
     public void openFAQActivity(View view) {
+        Intent intent = new Intent(this, FAQActivity.class);
+        startActivity(intent);
+    }
+    public void openFAQActivity() {
         Intent intent = new Intent(this, FAQActivity.class);
         startActivity(intent);
     }
@@ -160,16 +351,28 @@ public class MainScreenActivity extends AppCompatActivity
         Intent intent = new Intent(this, AboutOffuttActivity.class);
         startActivity(intent);
     }
+    public void openAboutOffuttActivity() {
+        Intent intent = new Intent(this, AboutOffuttActivity.class);
+        startActivity(intent);
+    }
 
-    public void openBPTab(View view)
-    {
+    public void openBPTab(View view){
+        Intent intent = new Intent(this, DirectsAndBikePark.class);
+        intent.putExtra("bike_park", 1);
+        startActivity(intent);
+    }
+    public void openBPTab(){
         Intent intent = new Intent(this, DirectsAndBikePark.class);
         intent.putExtra("bike_park", 1);
         startActivity(intent);
     }
 
-    public void openDirectionsTab(View view)
-    {
+    public void openDirectionsTab(View view){
+        Intent intent = new Intent(this, DirectsAndBikePark.class);
+        intent.putExtra("bike_park", 0);
+        startActivity(intent);
+    }
+    public void openDirectionsTab(){
         Intent intent = new Intent(this, DirectsAndBikePark.class);
         intent.putExtra("bike_park", 0);
         startActivity(intent);

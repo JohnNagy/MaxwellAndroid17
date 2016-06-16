@@ -67,7 +67,8 @@
                 android:id="@+id/buttonSponsors"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp"
-                android:background="@drawable/sponsors" />
+                android:background="@drawable/sponsors"
+                android:onClick="openSponsorsActivity"/>
 
             <Button
                 android:layout_width="80dp"
