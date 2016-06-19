@@ -4,20 +4,40 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_attractions"
-            android:icon="@drawable/attractions_notext"
+            android:icon="@drawable/attractions_notext_nobg"
             android:title="@string/Attractions_Activity_Label" />
         <item
             android:id="@+id/nav_bike_and_park"
-            android:icon="@drawable/bike_and_park_notext"
+            android:icon="@drawable/bike_and_park_notext_nobg"
             android:title="@string/Bike_Park_Activity_Label" />
         <item
             android:id="@+id/nav_kid_zone"
-            android:icon="@drawable/kids_zone_notext"
+            android:icon="@drawable/kids_zone_notext_nobg"
             android:title="@string/Kid_Zone_Activity_Label" />
         <item
             android:id="@+id/nav_sponsors"
-            android:icon="@drawable/statics_notext_nobg"
+            android:icon="@drawable/sponsors_notext_nobg"
             android:title="@string/Sponsors_Activity_Label" />
+        <item
+            android:id="@+id/nav_directions"
+            android:icon="@drawable/directions_notext_nobg"
+            android:title="@string/Directions_Activity_Label" />
+        <item
+            android:id="@+id/nav_social_media"
+            android:icon="@drawable/social_media_notext_nobg"
+            android:title="@string/Social_Media_Activity_Label" />
+        <item
+            android:id="@+id/nav_about_offutt"
+            android:icon="@drawable/about_offutt_notext_nobg"
+            android:title="@string/About_Offutt_Activity_Label" />
+        <item
+            android:id="@+id/nav_faq"
+            android:icon="@drawable/faq_notext_nobg"
+            android:title="@string/FAQ_Activity_Label" />
+        <item
+            android:id="@+id/nav_contact"
+            android:icon="@drawable/contact_notext_nobg"
+            android:title="@string/Contact_Activity_Label" />
     </group>
 
 

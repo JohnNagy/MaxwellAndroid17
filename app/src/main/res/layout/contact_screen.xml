@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,42 +8,41 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="nicholasbenson.offuttairshowapp.ContactActivity"
-    android:background="@drawable/poster_50_g_blur_540_902">
+    android:background="@drawable/poster_50_g_blur_540_902"
+    android:orientation="vertical">
 
-    <TextView
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="For Emergencies Call 911"
-        android:id="@+id/textView2"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="44dp"
-        android:textSize="21sp"
-        android:textAlignment="center" />
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorPrimaryLightTransparent"
+        android:padding="@dimen/activity_horizontal_margin">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lost child/parent - 555-555-5555"
-        android:id="@+id/textView3"
-        android:layout_marginTop="60dp"
-        android:textSize="21sp"
-        android:textAlignment="center"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_centerHorizontal="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="For Emergencies Call 911"
+            android:id="@+id/textView2"
+            android:textSize="21sp"
+            android:textAlignment="center"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="77dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Placeholder for &quot;section to ask question directly to show control&quot;"
-        android:id="@+id/textView4"
-        android:textAlignment="center"
-        android:layout_below="@+id/textView3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="64dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lost child/parent - 555-555-5555"
+            android:id="@+id/textView3"
+            android:textSize="21sp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="146dp"
+            android:layout_below="@+id/textView2"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
 
-</RelativeLayout>
+</LinearLayout>
 

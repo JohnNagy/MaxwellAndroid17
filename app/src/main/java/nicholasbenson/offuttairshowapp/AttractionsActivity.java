@@ -69,6 +69,11 @@ public class AttractionsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void openSponsorsActivity(View view) {
+        Intent intent = new Intent(this, SponsorsActivity.class);
+        startActivity(intent);
+    }
+
     public void goToWebsite (View view) {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);

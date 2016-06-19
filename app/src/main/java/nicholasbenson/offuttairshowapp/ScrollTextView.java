@@ -66,6 +66,13 @@ public class ScrollTextView extends TextView {
         resumeScroll();
     }
 
+    public void startScroll(int width)
+    {
+        mXPaused = -1 * width;
+        mPaused = true;
+        resumeScroll();
+    }
+
     /**
      * resume the scroll from the pausing point
      */
@@ -84,7 +91,7 @@ public class ScrollTextView extends TextView {
 
         int scrollingLen = calculateScrollingLen();
         int distance = scrollingLen - (getWidth() + mXPaused);
-        int duration = (new Double(mRndDuration * distance * 1.00000
+        int duration = (Double.valueOf(mRndDuration * distance * 1.00000
                 / scrollingLen)).intValue();
 
         setVisibility(VISIBLE);

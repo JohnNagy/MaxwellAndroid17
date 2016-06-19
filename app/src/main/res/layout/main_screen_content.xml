@@ -7,7 +7,8 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainScreenActivity"
     tools:showIn="@layout/main_screen_app_bar"
-    android:background="@drawable/poster_50_g_blur_270x450">
+    android:background="@drawable/poster_50_g_blur_270x450"
+    android:id="@+id/MainRelativeLayout">
 
     <TableLayout
         android:layout_width="wrap_content"
@@ -66,7 +67,8 @@
                 android:id="@+id/buttonSponsors"
                 android:layout_gravity="center_vertical"
                 android:layout_margin="10dp"
-                android:background="@drawable/sponsors" />
+                android:background="@drawable/sponsors"
+                android:onClick="openSponsorsActivity"/>
 
             <Button
                 android:layout_width="80dp"

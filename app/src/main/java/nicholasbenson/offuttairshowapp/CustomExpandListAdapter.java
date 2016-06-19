@@ -94,7 +94,6 @@ public class CustomExpandListAdapter extends BaseExpandableListAdapter
             imgTitle = "exhibitor_" + groupPosition;
         }
 
-        //.getApplicationInfo().name.split("[.]",2) + "_" + groupPosition;
         imgView.setImageResource(
             mContext.getApplicationContext().getResources().getIdentifier(imgTitle, "drawable", mContext.getApplicationInfo().packageName)
         );
@@ -121,7 +120,13 @@ public class CustomExpandListAdapter extends BaseExpandableListAdapter
         tvBody.setText(mParent.get(groupPosition).getChildBody());
 
         TextView tvLink = (TextView) view.findViewById(R.id.list_item_text_child_link);
-        tvLink.setText(mParent.get(groupPosition).getChildLink());
+        if (mParent.get(groupPosition).getChildLink() != null) {
+            tvLink.setText(mParent.get(groupPosition).getChildLink());
+        }
+        else
+        {
+            tvLink.setVisibility(View.GONE);
+        }
 
         view.setTag(holder);
 
