@@ -8,7 +8,6 @@
     android:id="@+id/list_item_child"
     android:gravity="center_vertical|center_horizontal"
     android:background="@color/colorPrimaryLightTransparent"
-
     >
 
     <TextView android:layout_width="match_parent"
@@ -16,10 +15,9 @@
         android:id="@+id/list_item_text_child_body"
         android:textSize="20sp"
         android:padding="10dp"
-
         android:layout_gravity="center_vertical"
         android:textColor="#ffffff"
-        /><!--android:textAlignment="center"-->
+        />
 
     <TextView android:layout_width="match_parent"
         android:layout_height="wrap_content"

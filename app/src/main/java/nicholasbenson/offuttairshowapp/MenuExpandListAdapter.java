@@ -1,6 +1,7 @@
 package nicholasbenson.offuttairshowapp;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.util.Log;
@@ -19,15 +20,18 @@ public class MenuExpandListAdapter extends BaseExpandableListAdapter {
     private List<ExpandedMenuModel> mListDataHeader; // header titles
 
     // child data in format of header title, child title
-    private HashMap<ExpandedMenuModel, List<String>> mListDataChild;
+    private HashMap<ExpandedMenuModel, List<ExpandedMenuModelChild>> mListDataChild;
     ExpandableListView expandList;
 
-    public MenuExpandListAdapter(Context context, List<ExpandedMenuModel> listDataHeader, HashMap<ExpandedMenuModel, List<String>> listChildData, ExpandableListView mView) {
+    public MenuExpandListAdapter(Context context, List<ExpandedMenuModel> listDataHeader, HashMap<ExpandedMenuModel, List<ExpandedMenuModelChild>> listChildData, ExpandableListView mView) {
         this.mContext = context;
         this.mListDataHeader = listDataHeader;
         this.mListDataChild = listChildData;
         this.expandList = mView;
     }
+
+
+
 
     @Override
     public int getGroupCount() {
@@ -41,8 +45,7 @@ public class MenuExpandListAdapter extends BaseExpandableListAdapter {
     public int getChildrenCount(int groupPosition) {
         int childCount = 0;
         if (groupPosition == 0) {
-            childCount = this.mListDataChild.get(this.mListDataHeader.get(groupPosition))
-                    .size();
+            childCount = this.mListDataChild.get(this.mListDataHeader.get(groupPosition)).size();
         }
         return childCount;
     }
@@ -54,11 +57,7 @@ public class MenuExpandListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public Object getChild(int groupPosition, int childPosition) {
-        //todo remove log
-        Log.d("CHILD", mListDataChild.get(this.mListDataHeader.get(groupPosition))
-                .get(childPosition).toString());
-        return this.mListDataChild.get(this.mListDataHeader.get(groupPosition))
-                .get(childPosition);
+        return this.mListDataChild.get(this.mListDataHeader.get(groupPosition)).get(childPosition);
     }
 
     @Override
@@ -84,15 +83,23 @@ public class MenuExpandListAdapter extends BaseExpandableListAdapter {
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = mInflator.inflate(R.layout.listheader, null);
         }
-        TextView lblListHeader = (TextView) convertView
-                .findViewById(R.id.submenu);
+        TextView lblListHeader = (TextView) convertView.findViewById(R.id.submenu);
         lblListHeader.setTypeface(null, Typeface.BOLD);
         lblListHeader.setText(headerTitle.getIconName());
         ImageView headerIcon = (ImageView) convertView.findViewById(R.id.iconimage);
+        ImageView indicatorIcon = (ImageView) convertView.findViewById(R.id.indicatorImage);
         headerIcon.setImageResource(headerTitle.getIconImg());
         headerIcon.setColorFilter(headerTitle.getHeaderTint(), PorterDuff.Mode.SRC_ATOP);
-        ImageView indicatorIcon = (ImageView) convertView.findViewById(R.id.indicatorImage);
-        indicatorIcon.setColorFilter(headerTitle.getIndicatorTint(), PorterDuff.Mode.SRC_ATOP);
+        if(!isExpanded)
+        {
+            indicatorIcon.setColorFilter(headerTitle.getIndicatorTint(), PorterDuff.Mode.SRC_ATOP);
+        }
+        else
+        {
+            indicatorIcon.setColorFilter(mContext.getResources().getColor(R.color.colorAccent), PorterDuff.Mode.SRC_ATOP);
+        }
+
+
         if (headerTitle.getIndicatorImg() != -1) {
             indicatorIcon.setImageResource(headerTitle.getIndicatorImg());
         }
@@ -106,18 +113,18 @@ public class MenuExpandListAdapter extends BaseExpandableListAdapter {
 
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-        final String childText = (String) getChild(groupPosition, childPosition);
+        final ExpandedMenuModelChild childObj = (ExpandedMenuModelChild) getChild(groupPosition, childPosition);
 
         if (convertView == null) {
-            LayoutInflater infalInflater = (LayoutInflater) this.mContext
-                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater infalInflater = (LayoutInflater) this.mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = infalInflater.inflate(R.layout.list_submenu, null);
         }
 
-        TextView txtListChild = (TextView) convertView
-                .findViewById(R.id.submenu);
+        TextView txtListChild = (TextView) convertView.findViewById(R.id.submenu);
+        txtListChild.setText((CharSequence) childObj.getChildName());
 
-        txtListChild.setText(childText);
+        ImageView iv = (ImageView) convertView.findViewById(R.id.childiconimage);
+        iv.setImageResource(childObj.getIconImg());
 
         return convertView;
     }

@@ -2,20 +2,21 @@ package nicholasbenson.offuttairshowapp;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.support.v4.content.ContextCompat;
 
 public class ExpandedMenuModel {
 
     private String iconName = "";
     private int iconImg = -1;
     private int indicatorImg = -1;
-    private int HeaderTint = Color.DKGRAY;
+    private int HeaderTint = Color.GREEN;
     private int indicatorTint = Color.TRANSPARENT;
     private Context ctx;
 
     public ExpandedMenuModel (Context context)
     {
         this.ctx = context;
-        HeaderTint = ctx.getResources().getColor(R.color.colorPrimaryDark);
+        HeaderTint = ContextCompat.getColor(ctx, R.color.colorPrimaryDark);
 
     }
 

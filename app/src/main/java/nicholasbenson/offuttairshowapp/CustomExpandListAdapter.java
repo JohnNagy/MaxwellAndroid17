@@ -94,7 +94,6 @@ public class CustomExpandListAdapter extends BaseExpandableListAdapter
             imgTitle = "exhibitor_" + groupPosition;
         }
 
-        //.getApplicationInfo().name.split("[.]",2) + "_" + groupPosition;
         imgView.setImageResource(
             mContext.getApplicationContext().getResources().getIdentifier(imgTitle, "drawable", mContext.getApplicationInfo().packageName)
         );

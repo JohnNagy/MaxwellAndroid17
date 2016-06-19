@@ -6,11 +6,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -23,6 +25,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewTreeObserver;
 import android.widget.ExpandableListView;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -36,8 +39,8 @@ public class MainScreenActivity extends AppCompatActivity{
     MenuExpandListAdapter mMenuAdapter;
     ExpandableListView expandableList;
     List<ExpandedMenuModel> listDataHeader;
-    HashMap<ExpandedMenuModel, List<String>> listDataChild;
-    List<String> heading1;
+    HashMap<ExpandedMenuModel, List<ExpandedMenuModelChild>> listDataChild;
+    List<ExpandedMenuModelChild> childObj;
     private ScrollTextView scrolltext;
     public int width;
     public Context ctx;
@@ -122,7 +125,19 @@ public class MainScreenActivity extends AppCompatActivity{
                 switch (i)
                 {
                     case 0:
-                        return false;
+                        ImageView imgIndic = (ImageView) findViewById(R.id.indicatorImage);
+                        if(!expandableListView.isGroupExpanded(i)) {
+                            imgIndic.setImageResource(R.drawable.ic_menu_white_24dp);
+                            imgIndic.setColorFilter(getResources().getColor(R.color.colorAccent));
+                            expandableListView.expandGroup(i);
+                        }
+                        else
+                        {
+                            imgIndic.setImageResource(R.drawable.about_offutt_notext_nobg);
+                            imgIndic.setColorFilter(getResources().getColor(R.color.colorPrimaryDark));
+                            expandableListView.collapseGroup(i);
+                        }
+                        return true;
                     case 1:
                         openBPTab();
                         return true;
@@ -152,6 +167,8 @@ public class MainScreenActivity extends AppCompatActivity{
             }
         });
 
+
+
         scrolltext=(ScrollTextView) findViewById(R.id.marquee);
         scrolltext.setText(R.string.Main_Default_Marquee);
         scrolltext.setTextColor(Color.WHITE);
@@ -167,27 +184,6 @@ public class MainScreenActivity extends AppCompatActivity{
             }
         });
     }
-
-    /*@TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-
-        Drawable drawable_groupIndicator =
-                getResources().getDrawable(R.drawable.ic_menu_white_24dp);
-        int drawable_width = drawable_groupIndicator.getMinimumWidth();
-
-        if (android.os.Build.VERSION.SDK_INT <
-                android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
-            expandableList.setIndicatorBounds(
-                    expandableList.getWidth() - drawable_width,
-                    expandableList.getWidth());
-        } else {
-            expandableList.setIndicatorBoundsRelative(
-                    expandableList.getWidth() - drawable_width,
-                    expandableList.getWidth());
-        }
-    }*/
 
     @Override
     public void onBackPressed() {
@@ -280,16 +276,45 @@ public class MainScreenActivity extends AppCompatActivity{
         listDataHeader.add(item9);
 
 
-        heading1 = new ArrayList<String>();
-        heading1.add(getString(R.string.Schedule_Activity_Label));
-        heading1.add(getString(R.string.Map_Activity_Label));
-        heading1.add(getString(R.string.Performers_Activity_Label));
-        heading1.add(getString(R.string.Sponsors_Activity_Label));
-        heading1.add(getString(R.string.Statics_Activity_Label));
-        heading1.add(getString(R.string.Exhibitors_Activity_Label));
-        heading1.add(getString(R.string.Food_Activity_Label));
 
-        listDataChild.put(listDataHeader.get(0), heading1);// Header, Child data
+        ExpandedMenuModelChild cld1 = new ExpandedMenuModelChild();
+        cld1.setIconImg(R.drawable.schedule_notext_nobg);
+        cld1.setChildName("Schedule");
+
+        ExpandedMenuModelChild cld2 = new ExpandedMenuModelChild();
+        cld2.setIconImg(R.drawable.map_notext_nobg);
+        cld2.setChildName("Map");
+
+        ExpandedMenuModelChild cld3 = new ExpandedMenuModelChild();
+        cld3.setIconImg(R.drawable.performers_notext_nobg);
+        cld3.setChildName("Performers");
+
+        ExpandedMenuModelChild cld4 = new ExpandedMenuModelChild();
+        cld4.setIconImg(R.drawable.sponsors_notext_nobg);
+        cld4.setChildName("Sponsors");
+
+        ExpandedMenuModelChild cld5 = new ExpandedMenuModelChild();
+        cld5.setIconImg(R.drawable.statics_notext_nobg);
+        cld5.setChildName("Statics");
+
+        ExpandedMenuModelChild cld6 = new ExpandedMenuModelChild();
+        cld6.setIconImg(R.drawable.exhibitors_notext_nobg);
+        cld6.setChildName("Exhibitors");
+
+        ExpandedMenuModelChild cld7 = new ExpandedMenuModelChild();
+        cld7.setIconImg(R.drawable.food_notext_nobg);
+        cld7.setChildName("Food");
+
+        childObj = new ArrayList<>();
+        childObj.add(cld1);
+        childObj.add(cld2);
+        childObj.add(cld3);
+        childObj.add(cld4);
+        childObj.add(cld5);
+        childObj.add(cld6);
+        childObj.add(cld7);
+
+        listDataChild.put(listDataHeader.get(0), childObj);// Header, Child data
 
 
     }

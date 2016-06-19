@@ -5,7 +5,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AboutOffuttActivity">
+    tools:context=".AboutOffuttActivity"
+    android:background="@drawable/poster_50_g_blur_540_902">
 
     <TextView
         android:layout_width="wrap_content"
@@ -14,5 +15,6 @@
         android:text="About Offutt..."
         android:id="@+id/tvAboutOffutt"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimaryLightTransparent"/>
 </RelativeLayout>

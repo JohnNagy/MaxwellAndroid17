@@ -94,9 +94,22 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".SponsorsActivity"
-            android:label="@string/Exhibitors_Activity_Label"
+            android:label="@string/Sponsors_Activity_Label"
             android:parentActivityName=".AttractionsActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".DirectsAndBikePark"
+            android:label="@string/title_activity_gmaps"
+            android:parentActivityName=".MainScreenActivity"
+            android:screenOrientation="portrait"
+            />
+
+        <activity android:name=".BikeParkMap"
+            android:label="Bike &amp; Park Map"/>
+
+
+
 
 
         <!--
@@ -110,18 +123,6 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-
-        <activity
-            android:name=".DirectsAndBikePark"
-            android:label="@string/title_activity_gmaps"
-            android:parentActivityName=".MainScreenActivity"
-            android:screenOrientation="portrait"
-            />
-
-        <activity android:name=".BikeParkMap"
-            android:label="Bike &amp; Park Map"
-
-            />
     </application>
 
 </manifest>
