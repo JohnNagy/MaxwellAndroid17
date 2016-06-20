@@ -1,7 +1,8 @@
 package nicholasbenson.offuttairshowapp;
 
-
 import android.annotation.TargetApi;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -33,6 +34,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import nicholasbenson.offuttairshowapp.notificationpoller.NotificationReciever;
+
 public class MainScreenActivity extends AppCompatActivity{
 
     private DrawerLayout mDrawerLayout;
@@ -45,8 +48,12 @@ public class MainScreenActivity extends AppCompatActivity{
     public int width;
     public Context ctx;
 
+    private AlarmManager alarm_manager;
+    private PendingIntent alarm_intent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Context context = getApplicationContext();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation_view);
         ctx = getApplicationContext();
@@ -167,8 +174,6 @@ public class MainScreenActivity extends AppCompatActivity{
             }
         });
 
-
-
         scrolltext=(ScrollTextView) findViewById(R.id.marquee);
         scrolltext.setText(R.string.Main_Default_Marquee);
         scrolltext.setTextColor(Color.WHITE);
@@ -183,6 +188,13 @@ public class MainScreenActivity extends AppCompatActivity{
                 scrolltext.startScroll(width);
             }
         });
+
+        // Setup NotificationPoller; Poll every 2.5 minutes. 150000 = 2.5mins
+        alarm_manager = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(context, NotificationReciever.class);
+        alarm_intent = PendingIntent.getBroadcast(context, 0, intent, 0);
+
+        alarm_manager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, 150000, 150000, alarm_intent);
     }
 
     @Override
@@ -448,5 +460,4 @@ public class MainScreenActivity extends AppCompatActivity{
             }
         }
     }
-
 }
