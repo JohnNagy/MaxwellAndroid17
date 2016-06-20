@@ -8,6 +8,11 @@
          location permissions for the 'MyLocation' functionality.
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- Start NotificationPoller at boot -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <!-- Poll for notifications -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
 
     <application
         android:allowBackup="true"
@@ -115,6 +120,11 @@
         <activity android:name=".BikeParkMap"
             android:label="Bike &amp; Park Map"
             android:screenOrientation="portrait"
+            />
+
+        <!-- Push Notifications, Notification Poller-->
+        <receiver
+            android:name=".notificationpoller.NotificationReciever"
             />
     </application>
 

@@ -1,5 +1,8 @@
 package nicholasbenson.offuttairshowapp;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -14,11 +17,20 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.Calendar;
+import java.util.TimeZone;
+
+import nicholasbenson.offuttairshowapp.notificationpoller.NotificationReciever;
+
 public class MainScreenActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private AlarmManager alarm_manager;
+    private PendingIntent alarm_intent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Context context = getApplicationContext();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_screen_drawer);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -50,6 +62,12 @@ public class MainScreenActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        // Setup NotificationPoller; Poll every 2.5 minutes. 150000 = 2.5mins
+        alarm_manager = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(context, NotificationReciever.class);
+        alarm_intent = PendingIntent.getBroadcast(context, 0, intent, 0);
+
+        alarm_manager.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, 150000, 150000, alarm_intent);
     }
 
     @Override
@@ -204,5 +222,4 @@ public class MainScreenActivity extends AppCompatActivity
             }
         }
     }
-
 }
